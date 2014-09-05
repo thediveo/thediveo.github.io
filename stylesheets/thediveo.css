@@ -1,0 +1,23 @@
+/* Fix broken GitHub CSS */
+b, strong {
+  font-weight: bold;
+}
+
+span.nb {
+  white-space: nowrap;
+}
+
+ul.plugins {
+  list-style: none;
+  padding-left: 0;
+}
+
+ul.plugins li:before {
+  font: normal normal normal 14px/1 FontAwesome;
+  content: "\f1e6";
+  margin-right: 0.5em;
+}
+
+ul.plugins li {
+  margin-bottom: 0.8ex;
+}

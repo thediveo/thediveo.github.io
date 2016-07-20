@@ -12,12 +12,21 @@ ul.plugins {
   padding-left: 0;
 }
 
-ul.plugins li:before {
+ul.plugins li:before,
+ul.kdenlive li:before {
   font: normal normal normal 14px/1 FontAwesome;
-  content: "\f1e6";
   margin-right: 0.5em;
 }
 
-ul.plugins li {
+ul.plugins li:before {
+  content: "\f1e6";
+}
+
+ul.kdenlive li:before {
+  content: "\f008";
+}
+
+ul.plugins li,
+ul.kdenlive li {
   margin-bottom: 0.8ex;
 }

@@ -1,4 +1,4 @@
-# TiddlyWiki 5
+# Re:TiddlyWiki 5
 
 My plugins for [TiddlyWiki5](https://www.tiddlywiki.com) (a unique non-linear
 notebook for capturing, organising and sharing complex information). These
@@ -32,7 +32,7 @@ This is from the eat-your-own-dog-food department.
 | [ThirdFlow](http://thediveo.github.io/ThirdFlow) | Helps with developing TiddlyWiki plugins: it neatly organizes your tiddlers for perfect source code management, packages your plugins, and generates live demo Wikis. |
 
 
-# Kdenlive
+# Re:Kdenlive
 
 Some stuff that might come in handy when working with the Open Source
 [Kdenlive](https://kdenlive.org/) non-linear video editor.

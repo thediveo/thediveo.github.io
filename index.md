@@ -1,43 +1,4 @@
-# Re:TiddlyWiki 5
+GitHub Projects:
 
-My plugins for [TiddlyWiki5](https://www.tiddlywiki.com) (a unique non-linear
-notebook for capturing, organising and sharing complex information). These
-plugins extend your TiddlyWikis with new functionality and fonts.
-
-### Fonts
-
-Add fonts and icons to your TiddlyWikis without the need to install them first
-into your system, or a permanent Internet connection.
-
-| Project | Description |
-| ------- | ----------- |
-| [TW5FontAwesome](http://thediveo.github.io/TW5FontAwesome) | Brings [Font Awesome 5](https://fontawesome.com) to your TiddlyWikis, without local font installs or the need for an Internet connection. |
-| [TWRoboto](http://thediveo.github.io/TWRoboto) | Brings Google's Roboto font family to your TiddlyWikis, without local font installs or the need for an Internet connection. |
-
-### Video
-
-There's more to TiddlyWikis than just text and static images. Add an enhances
-HTML5 video player!
-
-| Project | Description |
-| ------- | ----------- |
-| [TwTube](http://thediveo.github.io/TwTube) | Turns your TiddlyWiki into your personal non-linear tube uing the [Video.js media player](https://videojs.com/). There are several skins and some feature plugins available, too. |
-
-### Plugin Development
-
-This is from the eat-your-own-dog-food department.
-
-| Project | Description |
-| ------- | ----------- |
-| [ThirdFlow](http://thediveo.github.io/ThirdFlow) | Helps with developing TiddlyWiki plugins: it neatly organizes your tiddlers for perfect source code management, packages your plugins, and generates live demo Wikis. |
-
-
-# Re:Kdenlive
-
-Some stuff that might come in handy when working with the Open Source
-[Kdenlive](https://kdenlive.org/) non-linear video editor.
-
-| Project | Description |
-| ------- | ----------- |
-| [Kdenlive Project Analyzer](http://thediveo.github.io/kdenlive-project-analyzer) | A Kdenlive project analyzer, built from a crazy HTML5-XSLT combo. Checks your Kdenlive XML project files and sheds some lights on this angle brackets soup. |
-| [Kdenlive Post-Render Script](https://github.com/TheDiveO/kdenlive-post-render-script) | ...for adding meta data and cover art to freshly rendered MP4 video files. |
+- [TiddlyWiki5 plugins](tiddlywiki5)
+- [Kdenlive stuff](kdenlive)

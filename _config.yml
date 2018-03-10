@@ -1,12 +1,8 @@
 title: TheDiveO
 description: TheDiveO's Open Source repositories.
-google_analytics:
 show_downloads: false
 
-#theme: jekyll-theme-minimal
-remote_theme: "mmistakes/minimal-mistakes"
-
-minimal_mistakes_skin: "mint"
+theme: jekyll-theme-minimal
 
 gems:
   - jekyll-mentions

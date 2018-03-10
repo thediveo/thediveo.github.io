@@ -2,7 +2,11 @@
 
 My plugins for [TiddlyWiki5](https://www.tiddlywiki.com) (a unique non-linear
 notebook for capturing, organising and sharing complex information). These
-plugins extend your TiddlyWikis with new functionality and fonts.
+plugins extend your TiddlyWikis with new functionality:
+
+- Fonts
+- Video
+- Plugin Development
 
 ## Fonts
 

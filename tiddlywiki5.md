@@ -1,12 +1,12 @@
 # Re:TiddlyWiki 5
 
-My plugins for [TiddlyWiki5](https://www.tiddlywiki.com) (a unique non-linear
+My plugins for [TiddlyWiki&nbsp;5](https://www.tiddlywiki.com) (a unique non-linear
 notebook for capturing, organising and sharing complex information). These
 plugins extend your TiddlyWikis with new functionality:
 
-- Fonts
-- Video
-- Plugin Development
+- fonts
+- video player functionality and theming
+- TiddlyWiki&nsp;5 plugin development
 
 ## Fonts
 

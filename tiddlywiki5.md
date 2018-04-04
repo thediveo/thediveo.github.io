@@ -6,7 +6,7 @@ plugins extend your TiddlyWikis with new functionality:
 
 - fonts
 - video player functionality and theming
-- TiddlyWiki&nsp;5 plugin development
+- TiddlyWiki&nbsp;5 plugin development
 
 ## Fonts
 

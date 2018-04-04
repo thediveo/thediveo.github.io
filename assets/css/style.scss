@@ -12,6 +12,7 @@ h1, h2, h3 {
 a:hover, a:focus {
   text-decoration: underline !important;
   font-weight: inherit !important;
+  text-decoration-skip-ink: auto !important;
 }
 
 // Make it look like the vanilla TW5 theme.

@@ -34,3 +34,4 @@ This is from the eat-your-own-dog-food department.
 | Project | Description |
 | ------- | ----------- |
 | [ThirdFlow](http://thediveo.github.io/ThirdFlow) | Helps with developing TiddlyWiki plugins: it neatly organizes your tiddlers for perfect source code management, packages your plugins, and generates live demo Wikis. |
+| [TiddlyWikiPluginSkeleton](http://thediveo.github.io/TiddlyWikiPluginSkeleton) | TW5 plugin skeleton project to start from when developing using the _ThirdFlow_. |

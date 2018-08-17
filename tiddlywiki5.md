@@ -4,9 +4,16 @@ My plugins for [TiddlyWiki&nbsp;5](https://www.tiddlywiki.com) (a unique non-lin
 notebook for capturing, organising and sharing complex information). These
 plugins extend your TiddlyWikis with new functionality:
 
+- fuzzy searching
 - fonts
 - video player functionality and theming
 - TiddlyWiki&nbsp;5 plugin development
+
+## Fuzzy Searching
+
+| Project | Description |
+| ------- | ----------- |
+| [TwFusejs](http://thediveo.github.io/TwFusejs) | Brinkz furzy saerchink to yoor TidyWikkis. |
 
 ## Fonts
 

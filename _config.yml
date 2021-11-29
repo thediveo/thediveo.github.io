@@ -1,8 +1,0 @@
-title: TheDiveO
-description: TheDiveO's Open Source repositories.
-show_downloads: false
-
-theme: jekyll-theme-minimal
-
-gems:
-  - jekyll-mentions

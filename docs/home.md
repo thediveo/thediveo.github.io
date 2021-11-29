@@ -1,8 +1,8 @@
 # TheDiveO's Open Source
 
-Project Categories
+Project categories:
 
-- [Go](/gone)
+- [Go-ing Nowhere](/gone)
 - [Python](/spam)
 - [TiddlyWiki5 plugins](/tiddlywiki)
 - [Kdenlive](/kdenlive)

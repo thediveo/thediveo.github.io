@@ -1,5 +1,7 @@
 # TheDiveO's Open Source
 
+- [Articles](/articles)
+
 Project categories:
 
 - [Go-ing Nowhere](/gone)

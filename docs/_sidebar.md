@@ -4,8 +4,8 @@
   * [Capabilities Add/Drop](/art/cap-add-drop)
 * Projects
   * [Go-ing Nowhere](/gone)
-    * [CLI Support](/go-cli)
     * [Namespaces & Containers](/go-low)
+    * [CLI Support](/go-cli)
     * [Testing & Profiling](go-testprof)
   * [Python](/spam)
   * [TiddlyWiki5](/tiddlywiki)

@@ -29,11 +29,11 @@ application itself.
 
 [![GoDoc](https://pkg.go.dev/badge/github.com/TheDiveO/gons?status.svg)](https://pkg.go.dev/github.com/thediveo/gons/reexec/testing)
 
-## `errxpect`
+## 💤`errxpect`
 
-(_Retired after having been integrated into Gomega_)
+💤 _retired after having been integrated into Gomega_
 
-Originally a separate addition, `errxpect` has become an integral part of the
+Originally a separate add-on, `errxpect` has become an integral part of the
 [Gomega BDD testing framework](https://github.com/onsi/gomega). The original
 Gomega already has very nice built-in error checking for functions returning
 multiple values. However, this was designed for the success cases, but not for

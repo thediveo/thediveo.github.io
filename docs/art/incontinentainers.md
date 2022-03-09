@@ -43,10 +43,11 @@ To clarify: [chroot](https://man7.org/linux/man-pages/man2/chroot.2.html) is a
 mechanism to change the root directory of a process in that this process now
 only sees a "subtree" of the file system. Mount namespaces then partition mounts
 in that a process in a certain mount namespace can only see those mounts
-belonging to the mount namespace it's attached to.
+belonging to the mount namespace it is attached to.
 
 When it comes to chroot'ing, you need to be careful to not provide (hard) links
-into places in the VFS outside the chroot root. But then, you would not, do you?
+into places in the VFS outside the chroot root. But then, you would not, would
+you?
 
 ## Procfs Wormholes
 

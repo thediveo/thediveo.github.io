@@ -3,6 +3,7 @@
 * [Articles](/articles)
   * [Capabilities Add/Drop](/art/cap-add-drop)
   * [Incontinentainers](/art/incontinentainers)
+  * [Debug Go as Root](/art/debugroot)
 * Projects
   * [Go-ing Nowhere](/gone)
     * [Namespaces & Containers](/go-low)

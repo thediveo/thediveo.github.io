@@ -8,4 +8,5 @@
 * [Incontinentainers](/art/incontinentainers) – _are not as bad as some want to
   make you believe, because they're much easier to diagnose than virtual
   machines._
-* [debug Go Programs as Root in VSCode](/art/debugroot)
+* [debug Go Programs as Root in VSCode](/art/debugroot) – the Go extension's
+  documentation needs some debugging, too.

@@ -1,6 +1,5 @@
 <!-- markdownlint-disable-next-line MD041 -->
-* [Home](/) <!-- homepage pitfall, https://github.com/docsifyjs/docsify/issues/1131 -->
-* [Articles](/articles)
+* Articles
   * [Testing for Go Leaks](/art/leaky)
   * [Capabilities Add/Drop](/art/cap-add-drop)
   * [Incontinentainers](/art/incontinentainers)

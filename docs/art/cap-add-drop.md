@@ -9,7 +9,7 @@ Anyway, how are Linux capabilities assigned containers? Or more precise, how are
 the capabilities declared on container deployment in order to become effective
 and bounded capabilities?
 
-### Container Capability Declaration
+## Container Capability Declaration
 
 Unfortunately, the [Docker compose file
 reference](https://docs.docker.com/compose/compose-file/compose-file-v2/#cap_add-cap_drop)

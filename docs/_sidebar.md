@@ -1,6 +1,7 @@
 <!-- markdownlint-disable-next-line MD041 -->
 * Articles
   * [Testing for Go Leaks](/art/leaky)
+  * [M0 _is_ Special](/art/namspill)
   * [Capabilities Add/Drop](/art/cap-add-drop)
   * [Incontinentainers](/art/incontinentainers)
   * [Debug Go as Root](/art/debugroot)

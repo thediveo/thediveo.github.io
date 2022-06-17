@@ -4,6 +4,8 @@
 
 - [Testing for Leaks](/art/leaky) – _enhance your Go unit tests with Goroutine
   and file descriptor leak checking._
+- [M0 _is_ special](/art/namspill) – _why you should OSLockThread() your initial
+  goroutine when hopping namespaces from throw-away goroutines._
 - [adding and dropping Docker container capabilities](/art/cap-add-drop) – _what
   Docker never managed to document, except somewhere inside their huge code
   base._

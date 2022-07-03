@@ -6,27 +6,27 @@ holy grail of security. Or, hell envisioned by POSIX and offered to unsuspecting
 penguins. You decide.
 
 Anyway, how are Linux capabilities assigned containers? Or more precise, how are
-the capabilities declared on container deployment in order to become effective
-and bounded capabilities?
+the capabilities declared on container deployment in order to then become the
+"effective" and "bounded" capabilities for the processes running inside the
+container?
 
 ## Container Capability Declaration
 
 Unfortunately, the [Docker compose file
 reference](https://docs.docker.com/compose/compose-file/compose-file-v2/#cap_add-cap_drop)
-describes the `cap_add` and `cap_drop` elements in rather terse fashion, as well
-as in hardly useful manner:
+describes the `cap_add` and `cap_drop` elements in rather terse fashion and
+hardly useful manner:
 
 > Add or drop container capabilities. See `man 7 capabilities` for a full list.
 
 Yes, that's it. Now we're enlighted, or are we?
 
-How do `cap_add` and `cap_drop` actually interact, especially as there is no
-order defined for them in a YAML composer document? Please remember, YAML
-dictionaries don't define any order of the keys, and `cap_add` and `cap_drop`
-are keys for two arrays of capabilities.
+- How do `cap_add` and `cap_drop` actually interact, especially as there is no
+  order defined for them in a YAML composer document? Please remember, YAML
+  dictionaries don't define any order of the keys, and `cap_add` and `cap_drop`
+  are keys for two arrays of capabilities.
 
-And then, what happens if one or even both of `cap_add` and `cap_drop` contains
-`ALL`?
+- What happens if one or even both of `cap_add` and `cap_drop` contains `ALL`?
 
 To solve this mystery I had to dive into moby's source code and was lucky to
 (unexpectedly quickly) find

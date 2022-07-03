@@ -2,7 +2,7 @@
 
 ## Articles
 
-- [Testing for Leaks](/art/leaky) – _enhance your Go unit tests with Goroutine
+- [Testing for Leaks](/art/leaky) – _improve your Go unit tests with Goroutine
   and file descriptor leak checking._
 - [M0 _is_ special](/art/namspill) – _why you should OSLockThread() your initial
   goroutine when hopping namespaces from throw-away goroutines._

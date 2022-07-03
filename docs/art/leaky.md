@@ -8,12 +8,13 @@ another, such as returning or `panic`king. But goroutines can be blocked in
 reading from channels or writing into them.
 
 File descriptors are OS-managed resources, and while they get closed when their
-process terminates, they can pile up in long-running services. Fds can only be
+process terminates, they can pile up in long-running services. Fds are only
 automatically garbage collected when they are opened using one of the
 "high-level" Go libraries, such as `os.Open` that ensure to close their
 underlying OS resources when the application-facing Go value gets garbage
-collected. But there are enough situations where applications or Go modules need
-to work at the OS resource level.
+collected. But there are enough situations where applications or Go modules
+either somehow keep `*File`s from getting garbage-collected or need to work at
+the OS fd resource level without the `*File` safety net.
 
 Traditionally, leak checking is done by profiling, such as monitoring the
 resource consumption of a service under test over periods of time.
@@ -24,7 +25,7 @@ tests much earlier in the game...?
 ## Gomega `gleak`
 
 
-Admittedly, there's Über's highly useful and well-made
+First of all, there's Über's super useful and well-made
 [@uber-go/goleak](https://github.com/uber-go/goleak) Go module ... if you like
 plain (and brutal) `testing`. Personally, I prefer
 [Gomega](https://github.com/onsi/gomega) and
@@ -35,18 +36,33 @@ envisioned to be integrated into a TDD ecosystem, such as Gomega.
 
 (_Gleaky, the leaky Gopher mascot_)
 
-So I wrote my own goroutine matcher and integrated it not only figuratively, but
+After seriously pondering to submit changes upstream to open the currently
+internal parts for reuse, I decided against it. Instead, I wrote my own
+goroutine discovery and matchers, and integrated all not only figuratively, but
 literally, into Gomega. This includes reusing Gomega matchers to filter out
-"good" and non-leaking goroutines. My code has already gone upstream and is now
+"good" and non-leaking goroutines. My work already has gone upstream and is now
 included as the [`gleak`
 package](https://onsi.github.io/gomega/#codegleakcode-finding-leaked-goroutines)
-in Gomega.
+in Gomega. For some time you might need to use Gomega `@master` instead of
+`@latest` though.
 
 Often, all you need to add to your tests can be as simple as:
 
 ```go
 AfterEach(func() {
     Eventually(Goroutines).ShouldNot(HaveLeaked())
+})
+```
+
+Depending on how complex your goroutine usage is and how much time they need to
+properly wind down, you might want to tweak the overall maximum waiting time and
+polling intervall.
+
+```go
+AfterEach(func() {
+    Eventually(Goroutines).
+        WithTimeout(2*time.Second).WithInterval(250*time.Millisecond)
+            ShouldNot(HaveLeaked())
 })
 ```
 
@@ -63,8 +79,7 @@ descriptor leakages.
 
 > [!INFO] **fdooze** is available **only for Linux**.
 
-Often, all you need to add to your tests can be as simple as ... and trying to
-plumb the leaks you'll find:
+Often, all you need to add to your tests can be as simple as...
 
 ```go
 BeforeEach(func() {
@@ -75,9 +90,14 @@ BeforeEach(func() {
 })
 ```
 
-Now, detecting leaked fds is a slightly ugly business. First, fd numbers are not
-unambiguous identifiers like Goroutine IDs. So, fd numbers get reused. Then, we
-are never told _who_ and _where_ an fd was opened.
+...and then trying hard to plumb all the fd leaks you'll find. 😆
+
+Now, detecting leaked file descriptors is a "slightly" ugly business. First,
+file descriptors are simple `int` numbers and these fd numbers aren't
+unambiguous identifiers (like Goroutine IDs). So, fd numbers get reused.
+
+To add insult to injury, we are never told _who_ and _where_ a file descriptor
+was opened.
 
 Despite such limitations, fd leak testing still can be quite useful. Thus,
 `fdooze` does not blindly just compare fd numbers, but takes as much additional
@@ -93,22 +113,23 @@ Expected not to leak 1 file descriptors:
         path: "/home/leaky/module/oozing_test.go"
 ```
 
-For other types of file descriptors, such as pipes and sockets, several details
-will differ: instead of a path, other parameters will be shown, like pipe inode
-numbers or socket addresses.
+For other types of file descriptors, such as pipes and sockets, the details
+usually will differ: instead of a path, other parameters will be shown, such as
+pipe inode numbers or socket addresses.
 
 ## Leaky Tests instead of Leaky Production
 
 Fun fact: I've found most leaks in my _unit tests_ instead of my production
-code. However, at least I found one potential goroutine leak in production code
-that would rarely, if ever, be triggered in production – but luckily was
-reproducible triggered by some unit tests as a side effect of the different
-behavior of the unit test compared to production use.
+code. However, at least I found two potential goroutine leaks in production
+code. One that would rarely, if ever, be triggered in production – but luckily
+was reproducible triggered by some unit tests as a side effect of the different
+behavior of the unit test compared to production use. Ironically, this was also
+an example where it actually makes sense to use a buffered channel in order to
+allow a goroutine to _fire and forget_ its notification and not giving a fig
+whether anybody is still interested in the notification.
 
-Ironically, this was also an example where it actually makes sense to use a
-buffered channel in order to allow a goroutine to _fire and forget_ its
-notification and not giving a fig whether anybody is still interested in the
-notification.
+Another one that was a clear oversight in cleaning out the elements (with
+associated goroutines) in a map.
 
 ## Leaky and Goigi
 

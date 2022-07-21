@@ -2,6 +2,8 @@
 
 ## Articles
 
+- [~~godoc~~ ⇢ pkgsite](/art/pkgsite) – trusty ol' `godoc` has been deprecated,
+  but how to actually use `pkgsite` locally?
 - [Testing for Leaks](/art/leaky) – _improve your Go unit tests with Goroutine
   and file descriptor leak checking._
 - [M0 _is_ special](/art/namspill) – _why you should OSLockThread() your initial

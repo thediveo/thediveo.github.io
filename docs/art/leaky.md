@@ -43,8 +43,7 @@ literally, into Gomega. This includes reusing Gomega matchers to filter out
 "good" and non-leaking goroutines. My work already has gone upstream and is now
 included as the [`gleak`
 package](https://onsi.github.io/gomega/#codegleakcode-finding-leaked-goroutines)
-in Gomega. For some time you might need to use Gomega `@master` instead of
-`@latest` though.
+in Gomega as of v1.20.0.
 
 Often, all you need to add to your tests can be as simple as:
 
@@ -66,7 +65,9 @@ AfterEach(func() {
 })
 ```
 
-For more details, please see Gomega's documentation.
+For more details, please head over to [gleak: Finding Leaked
+Goroutines](https://onsi.github.io/gomega/#codegleakcode-finding-leaked-goroutines)
+in Gomega's documentation.
 
 ## `fdooze`
 

@@ -82,20 +82,23 @@ package:
     "version": "2.0.0",
     "tasks": [
         {
+            // use "Tasks: Run Task" on this task.
             "label": "view Go module documentation",
             "dependsOrder": "parallel",
             "dependsOn": [
-                "pkgsite service",
-                "view pkgsite"
+                "don't Run Task this! -- pkgsite service",
+                "don't Run Task this! -- view pkgsite"
             ],
             "problemMatcher": []
         },
         {
-            "label": "view pkgsite",
+            // do NOT Run Task this!
+            "label": "don't Run Task this! -- view pkgsite",
             "command": "${input:pkgsite}",
         },
         {
-            "label": "pkgsite service",
+            // do NOT Run Task this!
+            "label": "don't Run Task this! -- pkgsite service",
             "type": "shell",
             "command": "${workspaceFolder}/pkgsite.sh",
             "presentation": {
@@ -119,13 +122,17 @@ package:
 }
 ```
 
-Then, to use it, open the command palette in VSCode and select "**Tasks: Run
-Task**". Select "**view Go module documentation**". Then wait for `pkgsite` to
-spin up and the new "Simple Browser" to render the pkgsite. Press Ctrl-C in the
-pkgsite task terminal to terminate pkgsite and close the terminal.
+Then, view the package documentation from a locally running pkgsite, open the
+command palette in VSCode and select "**Tasks: Run Task**". Select "**view Go
+module documentation**". Then wait for `pkgsite` to spin up and the new "Simple
+Browser" to render the pkgsite.
+
+Press Ctrl-C in the pkgsite task terminal to terminate pkgsite and close the
+terminal.
 
 Please note that `pkgsite` in this local setup does not support searching, just
 viewing package documentation when you know the correct import path.
 
-Do **not** run the "view pkgsite" task, as it is an internal task and VSCode
-unfortunately does not support hiding such internal tasks.
+Do **not** run any of the "don't Run Task this! -- view pkgsite" and "don't Run
+Task this! -- pkgsite service" tasks directly, as they are internal tasks and
+VSCode unfortunately does not support hiding "internal" tasks.

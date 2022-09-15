@@ -2,6 +2,7 @@
 
 ## Articles
 
+- [`alias podman=p.o.'d.man`](/art/podman)
 - [~~godoc~~ ⇢ pkgsite](/art/pkgsite) – trusty ol' `godoc` has been deprecated,
   but how to actually use `pkgsite` locally?
 - [Testing for Leaks](/art/leaky) – _improve your Go unit tests with Goroutine

@@ -1,5 +1,6 @@
 <!-- markdownlint-disable-next-line MD041 -->
 * Articles
+  * [p.o.'d.man](/art/podman)
   * [~~godoc~~ ⇢ pkgsite](/art/pkgsite)
   * [Testing for Go Leaks](/art/leaky)
   * [M0 _is_ Special](/art/namspill)

@@ -74,8 +74,8 @@ It isn't that the [Go documentation](https://pkg.go.dev/context) about
 > cancellation signals, and other request-scoped values across API boundaries
 > and between processes.
 
-Somehow it looks as if none from the Podman project took heed of "_carries [...]
-**request-scoped** values_" (emphasis mine) or why would someone model a
+Somehow it looks as if no one from the Podman project took heed of "_carries
+[...] **request-scoped** values_" (emphasis mine) or why would someone model a
 potentially very long-living _client connection_ as a request-scoped _context_?
 
 Unfortunately, the situation actually is much worse and not just bickering about

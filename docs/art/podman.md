@@ -1,4 +1,4 @@
-# `alias podman=p.o.'d.man`
+# alias podman=p.o.'d.man
 <img title="podman" src="art/_images/sealwatcher.png" width="150" style="float: right;">
 
 All I wanted to do was to add [Podman](https://podman.io) awareness to my

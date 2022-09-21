@@ -1,6 +1,8 @@
 # alias podman=p.o.'d.man
 <img title="podman" src="art/_images/sealwatcher.png" width="150" style="float: right;">
 
+- updated: new section "[Rootless Rudeness](#rootless-rudeness)"
+
 All I wanted to do was to add [Podman](https://podman.io) awareness to my
 [lxkns](https://github.com/thediveo/lxkns) discovery engine for Linux kernel
 namespaces and containers. I went down a Monty Python rabbit hole.
@@ -264,6 +266,45 @@ container workloads.
 To be honest, if I had to start over again, next time I would simply completely
 ignore the Podman API and just use the Docker-compatible API with the stable and
 easy-to-use Docker Go client.
+
+## Rootless Rudeness
+
+Update: the saga keeps on giving. I noticed a podman-related test to fail when
+_not_ run as root, when it actually was supposed to be skipped. For some reason,
+`os.Geteuid()` was stubbornly returning `0`, so at first I suspected a potential
+Go 1.19 regression – which of course it wasn't.
+
+So it slowly dawned upon me that I should better take a look at the user
+namespace the test executes in ... and to my utter dismay my test was always
+"teleported" without my doing into a user namespace created and held open by
+podman's catatonit pause process. Further checks showed that it must happen very
+early as my own (test) `init()` is already running unwantingly in the different
+user namespace.
+
+Why is this bad? Because any process or thread (_cough_ "task") [given the
+required capability `CAP_SYS_ADMIN` in the user namespace it is going to switch
+into](https://man7.org/linux/man-pages/man2/setns.2.html#DESCRIPTION) will
+automatically become UID 0. Before you panic, it's not as bad as it sounds, as
+this is a restricted mini-me of root (at least if you also better map your
+mini-me UID 0 to something else outside your user namespace).
+
+However, what the Podman code base here does, it nothing short of very rude: it
+forces code that only uses certain parts of the REST API client into switching
+into a "rootless" user namespace.
+
+It's yet unclear as to what exactly is causing triggering this, but the bets are
+on the image-related bindings causing the havoc, as the problem only manifests
+in few specific test packages that make use of a simple [test utility
+package](https://github.com/thediveo/sealwatcher/blob/master/test/testutils.go):
+
+```
+go mod why github.com/containers/podman/v3/pkg/rootless
+
+# github.com/containers/podman/v3/pkg/rootless
+github.com/thediveo/sealwatcher/test
+github.com/containers/podman/v3/pkg/specgen
+github.com/containers/podman/v3/pkg/rootless
+```
 
 ## Final Quote
 

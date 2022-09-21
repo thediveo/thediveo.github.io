@@ -1,5 +1,5 @@
 <!-- markdownlint-disable-next-line MD041 -->
-* Articles
+* Posts
   * [p.o.'d.man](/art/podman)
   * [~~godoc~~ ⇢ pkgsite](/art/pkgsite)
   * [Testing for Go Leaks](/art/leaky)

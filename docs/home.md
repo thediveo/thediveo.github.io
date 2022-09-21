@@ -1,6 +1,6 @@
 # TheDiveO's Open Source
 
-## Articles
+## Posts
 
 - [`alias podman=p.o.'d.man`](/art/podman)
 - [~~godoc~~ ⇢ pkgsite](/art/pkgsite) – trusty ol' `godoc` has been deprecated,

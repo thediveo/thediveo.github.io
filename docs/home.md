@@ -2,6 +2,8 @@
 
 ## Posts
 
+- [Gomega tricks](/art/gomega-tricks) – use matchers not only for assertions,
+  but also for filtering ... and reduce boilerplate.
 - [`alias podman=p.o.'d.man`](/art/podman)
 - [~~godoc~~ ⇢ pkgsite](/art/pkgsite) – trusty ol' `godoc` has been deprecated,
   but how to actually use `pkgsite` locally?

@@ -5,7 +5,7 @@ them, as well as dealing with container engines and "drive-by" paths.
 
 ## `lxkns`
 
-[lxkns](https://github.com/TheDiveO/lxkns) implements a comprehensive Linux
+[lxkns](https://github.com/thediveo/lxkns) implements a comprehensive Linux
 kernel namespace discovery engine which discovers namespaces in places where
 many tools don't want to look into. Furthermore, it also detects mount points
 and brings them into a more useful form of a tree based on mount the _paths_.
@@ -24,7 +24,7 @@ of a multi-threaded Go application into a different mount namespace. And it
 avoids having to re-execute the application in order to switch into a different
 mount namespace before the Go runtime spins up.
 
-[![GoDoc](https://pkg.go.dev/badge/github.com/TheDiveO/lxkns.svg)](https://pkg.go.dev/github.com/thediveo/lxkns)
+[![GoDoc](https://pkg.go.dev/badge/github.com/thediveo/lxkns.svg)](https://pkg.go.dev/github.com/thediveo/lxkns)
 
 For some lower-level functionality, `lxkns` relies on separate Go modules that
 might be of interest also outside the context of `lxkns`:
@@ -34,7 +34,7 @@ might be of interest also outside the context of `lxkns`:
 
 ## `whalewatcher`
 
-[whalewatcher](https://github.com/TheDiveO/whalewatcher) automatically tracks
+[whalewatcher](https://github.com/thediveo/whalewatcher) automatically tracks
 Docker and containerd active workloads in the background. It avoids the need to
 repeatedly query (poll) the lists of alive containers (containers with
 processes) in order to get the correct active workload picture. Instead, it
@@ -47,11 +47,21 @@ always up-to-date list of alive containers whenever they need without having to
 worry about (re)synchronization with the container engines, high poll load, et
 cetera. That's taken care of by the `whalewatcher` module.
 
-[![GoDoc](https://pkg.go.dev/badge/github.com/TheDiveO/whalewatcher.svg)](https://pkg.go.dev/github.com/thediveo/whalewatcher)
+[![GoDoc](https://pkg.go.dev/badge/github.com/thediveo/whalewatcher.svg)](https://pkg.go.dev/github.com/thediveo/whalewatcher)
+
+## `sealwatcher`
+
+[sealwatcher](https://github.com/thediveo/sealwatcher) automatically tracks
+[Podman](https://podman.io) container active workloads in the background. It
+extends [whalewatcher](https://github.com/thediveo/whalewatcher) to provide a
+native podman experience – albeit I personally found that to be more
+[p.o.'d.man](/art/podman)-like than anything smooth.
+
+[![GoDoc](https://pkg.go.dev/badge/github.com/thediveo/sealwatcher.svg)](https://pkg.go.dev/github.com/thediveo/sealwatcher)
 
 ## `procfsroot`
 
-[procfsroot](https://github.com/TheDiveO/procfsroot) makes `/proc/$PID/root`
+[procfsroot](https://github.com/thediveo/procfsroot) makes `/proc/$PID/root`
 (drive-by) "wormholes" more accessible. Given sufficient capabilities,
 `/proc/$PID/root` allows processes to directly see the file system as seen by a
 process in a different mount namespace. These paths avoid the need for spawning
@@ -69,13 +79,13 @@ prefix always required.
 consider using the higher-level abstraction of the `Mountineer` type in the
 `lxkns` module, as it hides gory details
 
-[![GoDoc](https://pkg.go.dev/badge/github.com/TheDiveO/procfsroot.svg)](https://pkg.go.dev/github.com/thediveo/procfsroot)
+[![GoDoc](https://pkg.go.dev/badge/github.com/thediveo/procfsroot.svg)](https://pkg.go.dev/github.com/thediveo/procfsroot)
 
-## `gons`
+## 💤`gons`
 
-(_Retired_)
+💤 _retired_
 
-[gons](https://github.com/TheDiveO/gons) is a small Go module that selectively
+[gons](https://github.com/thediveo/gons) is a small Go module that selectively
 switches your Go application into other already existing Linux namespaces. This
 must happen before the Go runtime spins up, blocking certain namespace changes,
 such as changing into a different mount namespace.
@@ -86,4 +96,4 @@ module has become obsolete with the advent of the
 integral part of `lxkns`), which in most situation offer much better performance
 and much simpler handling when reading from other mount namespaces.
 
-[![GoDoc](https://pkg.go.dev/badge/github.com/TheDiveO/gons.svg)](https://pkg.go.dev/github.com/thediveo/gons)
+[![GoDoc](https://pkg.go.dev/badge/github.com/thediveo/gons.svg)](https://pkg.go.dev/github.com/thediveo/gons)

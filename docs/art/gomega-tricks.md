@@ -37,7 +37,7 @@ a collection, so it might container other elements as noise. No need to write
 out multiple individual `ContainElement` assertions in order to ensure all
 wanted elements are present, but ignoring the noise.
 
-## BeKeyOf
+## `BeKeyOf`
 
 Somewhat related to this is the rather new
 [`BeKeyOf`](https://onsi.github.io/gomega/#bekeyofm-interface) matcher: it
@@ -66,7 +66,7 @@ Here, `BeKeyOf` avoids having to manually roll a loop checking either the
 original collection element by element. It does not only reduce boilerplate, but
 additionally makes the test much more compact and concise.
 
-## HaveValue
+## `HaveValue`
 
 When writing custom matchers, their reuse formerly was sometimes hampered
 because they needed boilerplate code when they should be used in different

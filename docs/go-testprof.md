@@ -19,6 +19,13 @@ namespaces for individual tests.
 
 ## `gons/reexec/testing`
 
+> Excellent news from the Go project: [issue #51430 "cmd/cover: extend coverage
+> testing to include applications"](https://github.com/golang/go/issues/51430)
+> does not only support profiling applications, but even multiple runs,
+> including re-executing your own binary. At the moment, it's still a
+> `GOEXPERIMENT=coverageredesign`, but already enabled by default when building
+> your Go tool chain from tip.
+
 [gons/reexec/testing](https://github.com/TheDiveO/gons/tree/master/reexec/testing)
 provides **coverage profiling of re-executing Go applications**, such as those
 using the

@@ -15,8 +15,12 @@ their roles.
 ## `enumflag`
 
 [enumflag](https://github.com/TheDiveO/enumflag) adds enumeration flags
-(including enum _slices_) to the
-[@spf13/pflag](https://github.com/spf13/pflag) Go flag drop-in package.
+(including enum _slices_) to the [@spf13/pflag](https://github.com/spf13/pflag)
+Go flag drop-in package.
+
+There's now a source-compatible `enumflag/v2` that makes use of Go generics so
+that the Go compiler can type-check at compile time that you are passing in a
+suitable enum flag type and a matching enum value-to-string map.
 
 [![GoDoc](https://pkg.go.dev/badge/github.com/TheDiveO/enumflag.svg)](https://pkg.go.dev/github.com/thediveo/enumflag)
 

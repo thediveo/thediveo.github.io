@@ -2,6 +2,8 @@
 
 ## Posts
 
+- [C(r)apabilities Illustrated](/art/capabilities) – Professor Lipton and the
+  Diabolical POSIX Legacy.
 - [Plugin &amp; Generics](/art/plug-generics) – Go Generics to the rescue when
   managing the exposed functions and interfaces of plugins.
 - [Gomega tricks](/art/gomega-tricks) – use matchers not only for assertions,

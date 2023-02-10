@@ -1,5 +1,6 @@
 <!-- markdownlint-disable-next-line MD041 -->
 * Posts
+  * [Capabilities Illustrated](/art/capabilities)
   * [Plugin &amp; Generics](/art/plug-generics)
   * [Gomega tricks](/art/gomega-tricks)
   * [p.o.'d.man](/art/podman)

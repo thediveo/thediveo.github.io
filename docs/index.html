@@ -76,42 +76,24 @@
   /* adorn external links */
   a[target="_blank"]:not(.github-corner):not(.noext)::after {
     background: no-repeat var(--external-link-icon);
-    display: inline-block;
     content: '';
-    background-size: 100% 100%;
-    width: 1.75ex;
-    height: 1.75ex;
-    vertical-align: text-bottom;
-    margin-left: 0.05em;
-    margin-right: 0.1em;
-    margin-bottom: 0.3ex;
+    background-size: 0.9em;
+    padding-left: 1.6ex;
     filter: invert(1) brightness(0.3);
     /* theming hack */
   }
   a[href^="https://github.com/"]::before {
     background: no-repeat var(--github-icon) !important;
-    display: inline-block;
     content: '';
-    background-size: 100% 100% !important;
-    width: 1.75ex;
-    height: 1.75ex;
-    vertical-align: text-bottom;
-    margin-left: 0.05em;
-    margin-right: 0.2em;
-    margin-bottom: 0.3ex;
+    background-size: 0.9em !important;
+    padding-left: 2ex;
     filter: invert(1) brightness(0.3);
   }
   a[href^="https://pkg.go.dev/"]::before {
     background: no-repeat var(--go-icon) !important;
-    display: inline-block;
     content: '';
-    background-size: 100% 100% !important;
-    width: 1.75ex;
-    height: 1.75ex;
-    vertical-align: text-bottom;
-    margin-left: 0.05em;
-    margin-right: 0.2em;
-    margin-bottom: 0.3ex;
+    background-size: 1.4em !important;
+    padding-left: 2.75ex;
     filter: invert(1) brightness(0.3);
   }
   aside a[target="_blank"]::after, a[href^="https://pkg.go.dev/"]::after, a[href^="https://github.com/"]::after {

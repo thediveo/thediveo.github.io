@@ -2,16 +2,16 @@
 
 ## Posts
 
-- [C(r)apabilities Illustrated](/art/capabilities) – Professor Lipton and the
-  Diabolical POSIX Legacy.
-- [Plugin &amp; Generics](/art/plug-generics) – Go Generics to the rescue when
-  managing the exposed functions and interfaces of plugins.
-- [Gomega tricks](/art/gomega-tricks) – use matchers not only for assertions,
-  but also for _filtering_ ... and reduce test boilerplate.
-- [`alias podman=p.o.'d.man`](/art/podman) – down the rabbit hole of rootless
-  rudeness.
-- [~~godoc~~ ⇢ pkgsite](/art/pkgsite) – trusty ol' `godoc` has been deprecated,
-  but how to actually use `pkgsite` locally?
+- [C(r)apabilities Illustrated](/art/capabilities) – _Professor Lipton and the
+  Diabolical POSIX Legacy._
+- [Plugin &amp; Generics](/art/plug-generics) – _Go Generics to the rescue when
+  managing the exposed functions and interfaces of plugins._
+- [Gomega tricks](/art/gomega-tricks) – _use matchers not only for assertions,
+  but also for **filtering** ... and reduce test boilerplate._
+- [`alias podman=p.o.'d.man`](/art/podman) – _down the rabbit hole of rootless
+  rudeness._
+- [~~godoc~~ ⇢ pkgsite](/art/pkgsite) – _trusty ol' `godoc` has been deprecated,
+  but how to actually use `pkgsite` locally?_
 - [Testing for Leaks](/art/leaky) – _improve your Go unit tests with Goroutine
   and file descriptor leak checking._
 - [M0 _is_ special](/art/namspill) – _why you should OSLockThread() your initial
@@ -22,8 +22,8 @@
 - [Incontinentainers](/art/incontinentainers) – _are not as bad as some want to
   make you believe, because they're much easier to diagnose than virtual
   machines._
-- [debug Go Programs as Root in VSCode](/art/debugroot) – the Go extension's
-  documentation needs some debugging, too.
+- [debug Go Programs as Root in VSCode](/art/debugroot) – _the Go extension's
+  documentation needs some debugging, too._
 
 ## Project Categories
 

@@ -3,19 +3,23 @@
 [Linux capabilities](https://man7.org/linux/man-pages/man7/capabilities.7.html)
 – the posterchildren of security. Most funny when combined with such advice such
 as not running as root (especially in containers) because that is "best
-practise". I prefer to refer to them as "crapabilities".
+practise". If people say so, then it must be.
+
+I rather prefer to refer to this as "crapabilities", for reasons outlined below.
 
 ## Eight Shades of Crapability
 
 My personal favorite is to ask people praising capabilities how many sets they
-know of only to see them fold. Time for an illustration to rip the illusion
-apart.
+know of – only to see them fold.
+
+Time for an illustration to rip the illusion apart.
 
 ![capabilities](/_images/capabilities.svg)
 
-To answer my question, there are actually **eight sets**: a group of five
-capabilities sets for threads (tasks, processes) and then another group of three
-file capabilities sets.
+To answer my question, there are actually **eight sets**: first, a group of
+_five_ capabilities sets for threads (tasks, processes) and then another group
+of _three_ capabilities sets for files. Please note that I use (as usually) in
+this context the terms _thread_ and _task_ interchangeably.
 
 - **thread capabilities**
   - **effective capabilities** – only these capabilities decide what a thread is
@@ -45,5 +49,7 @@ bounding and ambient capabilities.
 To add more fun, there's a non-trivial API so that threads can modify their
 various capabilities sets.
 
-It is malicious gossip that this architectures originally was one of the puzzles
-to solve in a Professor Lipton portable game. It must be.
+## Post Scriptum
+
+It is malicious gossip that this architecture originally was one of the puzzles
+to solve in a Professor Lipton portable game. It _must be_.

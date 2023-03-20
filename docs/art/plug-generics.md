@@ -1,8 +1,9 @@
-# Plugin and Generics
+# Plugins and Generics
 
 Wikipedia nicely [describes a
-plugin](https://en.wikipedia.org/wiki/Plug-in_(computing)) as a "software
-component that adds a specific feature to an existing computer program".
+plugin](https://en.wikipedia.org/wiki/Plug-in_(computing)) as a "_software
+component that adds a specific feature to an existing computer program_".
+
 Regardless of dynamically loaded ("run-time") plugins or statically linked
 ("compile-time") plugins: a plugin architecture helps modularizing, maintaining,
 and extending application functionality.

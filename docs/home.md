@@ -2,7 +2,8 @@
 
 ## Posts
 
-- [systemd-notworkd](/art/notwork) – tripping up network-related unit tests.
+- [systemd-notworkd](/art/notworkd) – _thank you for tripping up network-related
+  unit tests_.
 - [C(r)apabilities Illustrated](/art/capabilities) – _Professor Lipton and the
   Diabolical POSIX Legacy._
 - [Plugin &amp; Generics](/art/plug-generics) – _Go Generics to the rescue when

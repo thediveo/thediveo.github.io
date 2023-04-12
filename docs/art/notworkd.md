@@ -47,8 +47,7 @@ Now, `networkd` deals with three different units of configuration:
 
 It is the third case we need to deal with in this case: a unit test dynamically
 creates virtual network interfaces. Unfortunately, in its default configuration,
-`networkd` plays havoc with these unit test MACVLAN interfaces. But in which
-way?
+`networkd` plays havoc with these unit test MACVLAN interfaces. But how exactly?
 
 ## Configuration Autopsy
 

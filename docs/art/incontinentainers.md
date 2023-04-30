@@ -1,5 +1,5 @@
 # Incontinentainers
-<img src="art/_images/incontinentainer.jpg" style="width: 10em; float: right;" title="Incontinentainer">
+<img src="art/_images/incontinentainer.png" style="width: 10em; float: right; padding-left: 0.5em;" title="Incontinentainer">
 
 Containers are not Virtual Machines. And, in the words of Dan Walsh:
 "[Containers do not
@@ -17,7 +17,7 @@ as not least this post is testament to.
 
 ## Namespaces
 
-Linux kernel namespaces are often seen as VM-like sandboxing. Au contraire, I
+Linux kernel namespaces are often seen as VM-like sandboxing. _Au contraire_, I
 like to think of them rather as "partitioning" certain OS resources, such as
 processes, network stacks, and views into the virtual file system. And no, I
 didn't forgot the plural-s with "file system".
@@ -30,11 +30,12 @@ The [Linux Kernel
 documentation](https://www.kernel.org/doc/html/latest/filesystems/vfs.html)
 describes the virtual file system (VFS for short) as "_the software layer in the
 kernel that provides the filesystem interface to user programs._" Please note
-that the VFS always takes stage in singular, never as many VFSes.
+that the VFS always takes stage in singular, never as many VFSes. (_While you
+can mount multiple file systems, but there's still only one VFS._)
 
 Now, the concept of [mount
 namespaces(7)](https://man7.org/linux/man-pages/man7/mount_namespaces.7.html)
-might easily make us think of multiple VFSes.
+might easily trick us into thinking that there might be multiple VFSes.
 
 **Except, there's still only a single VFS, and mount namespaces -- together with
 chroot'ing -- only provide "partitioned views" into this single VFS.**
@@ -55,6 +56,7 @@ Probably mostly overlooked, the
 [procfs](https://man7.org/linux/man-pages/man5/proc.5.html) has a hidden
 champion: `/proc/$PID/root`. To cite the man page for proc(5):
 
+> [!QUOTE]
 > "Note however that this file is not merely a symbolic link. It provides the
 > same view of the filesystem (including namespaces and the set of per-process
 > mounts) as the process itself."

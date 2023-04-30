@@ -1,16 +1,19 @@
 # Kdenlive
 
+> [!WARNING]
+> This stuff is 💤 retired, as I don't have the time to work on them.
+
 Some stuff that might come in handy when working with the Open Source
 [Kdenlive](https://kdenlive.org/) non-linear video editor.
 
-## Project Analyzer
+## 💤Project Analyzer
 
 A [Kdenlive project
 analyzer](http://thediveo.github.io/kdenlive-project-analyzer), built from a
 crazy HTML5-XSLT combo. Checks your Kdenlive XML project files and sheds some
 lights on this angle brackets soup.
 
-## Post-Render Script
+## 💤Post-Render Script
 
 The [Kdenlive Post-Render
 Script](https://github.com/TheDiveO/kdenlive-post-render-script) adds meta data

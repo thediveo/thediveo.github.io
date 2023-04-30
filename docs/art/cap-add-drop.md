@@ -17,6 +17,7 @@ reference](https://docs.docker.com/compose/compose-file/compose-file-v2/#cap_add
 describes the `cap_add` and `cap_drop` elements in rather terse fashion and
 hardly useful manner:
 
+> [!QUOTE]
 > Add or drop container capabilities. See `man 7 capabilities` for a full list.
 
 Yes, that's it. Now we're enlighted, or are we?

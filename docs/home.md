@@ -2,6 +2,8 @@
 
 ## Posts
 
+<div class="spaced">
+
 - [systemd-notworkd](/art/notworkd) – _thank you for tripping up network-related
   unit tests_.
 - [C(r)apabilities Illustrated](/art/capabilities) – _Professor Lipton and the
@@ -27,7 +29,11 @@
 - [debug Go Programs as Root in VSCode](/art/debugroot) – _the Go extension's
   documentation needs some debugging, too._
 
+</div>
+
 ## Project Categories
+
+<div class="spaced">
 
 - [Go-ing Nowhere](/gone) by trying to use Go in places where it might not be
   the best of ideas.
@@ -35,5 +41,7 @@
 - [TiddlyWiki5 plugins](/tiddlywiki)
 - [Kdenlive](/kdenlive)
 - [Gists](https://gist.github.com/TheDiveO)
+
+</div>
 
 [My Github Profile](https://github.com/thediveo)

@@ -1,7 +1,7 @@
 # TiddlyWiki 5
 
-> [!WARNING] These plugins are not actively maintained anymore, as I don't have
-> the time to work on them.
+> [!WARNING]
+> These plugins are 💤 retired, as I don't have the time to work on them.
 
 Here are my plugins for [TiddlyWiki 5](https://www.tiddlywiki.com) (a unique
 non-linear notebook for capturing, organising and sharing complex information).
@@ -12,11 +12,11 @@ These plugins extend your TiddlyWikis with new functionality:
 - video player functionality and theming
 - TiddlyWiki 5 plugin development
 
-## Fuzzy Searching
+## 💤Fuzzy Searching
 
 Ze [TwFusejs](http://thediveo.github.io/TwFusejs) pluckin brinkz furzy saerchink to yoor TidyWikkis.
 
-## Fonts
+## 💤Fonts
 
 Add fonts and icons to your TiddlyWikis without the need to install them first
 into your system, or a permanent Internet connection.
@@ -29,7 +29,7 @@ the need for an Internet connection.
 family to your TiddlyWikis, without local font installs or the need for an
 Internet connection. |
 
-## Video
+## 💤Video
 
 There's more to TiddlyWikis than just text and static images. Add an enhances
 HTML5 video player!
@@ -38,7 +38,7 @@ HTML5 video player!
 personal non-linear tube uing the [Video.js media player](https://videojs.com/).
 There are several skins and some feature plugins available, too.
 
-## Plugin Development
+## 💤Plugin Development
 
 This is from the eat-your-own-dog-food department.
 

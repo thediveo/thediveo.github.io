@@ -17,9 +17,13 @@ Now there are two suspects that could be involved:
 
 ## NetworkManager
 
+First, for once, NetworkManager is innocent. In the full context it is
+nevertheless instructive to understand how NetworkManager is configured; or
+rather, which devices is should _not_ manage.
+
 Ubuntu-based distributions in general define in
 `/usr/lib/NetworkManager/conf.d/10-globally-managed-devices.conf` all network
-interfaces to be unmanaged, except for those of type "wifi", "gsm", and "cdma":
+interfaces to be unmanaged, except for those of type `wifi`, `gsm`, and `cdma`:
 
 ```ini
 [keyfile]
@@ -70,7 +74,7 @@ Expect(mac2now).To(Equal(mac2),
    mac2.String(), mac2now.String())
 ```
 
-Just for completeness and as a good cross-check:
+Just for completeness and doubling up as a good cross-check:
 
 ```ini
 # /usr/lib/systemd/network/99-default.link
@@ -87,6 +91,7 @@ Now, `MACAddressPolicy=persistent` [doesn't exactly
 do](https://www.freedesktop.org/software/systemd/man/systemd.link.html#%5BLink%5D%20Section%20Options)
 what you think it may do:
 
+> [!QUOTE]
 > If the hardware has a persistent MAC address, as most hardware should, and if
 > it is used by the kernel, nothing is done. Otherwise, a new MAC address is
 > generated which is guaranteed to be the same on every boot for the given

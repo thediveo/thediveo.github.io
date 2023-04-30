@@ -11,6 +11,7 @@ namespaces and containers. I went down a Monty Python rabbit hole.
 
 So, [what is podman?](https://podman.io/whatis.html):
 
+> [!QUOTE]
 > Simply put: `alias docker=podman`
 
 \**cough*\* when you define your own identity primarily as "**not** being X"
@@ -72,6 +73,7 @@ You must be kidding ... _please_?
 It isn't that the [Go documentation](https://pkg.go.dev/context) about
 `Context`s appears to be inscrutable:
 
+> [!QUOTE]
 > Package context defines the Context type, which carries deadlines,
 > cancellation signals, and other request-scoped values across API boundaries
 > and between processes.
@@ -169,7 +171,8 @@ how it passes them on to us, we just read from the returned channels. Regardless
 of whether `Events` immediately fails at first attempt, or any time later: we
 always will receive any error via the returned error channel.
 
-Brian: "_You have to be different_."
+> [!QUOTE]
+> Brian: "_You have to be different_."
 
 To start with, we have to create the channels ourselves; which isn't much of a
 big deal.

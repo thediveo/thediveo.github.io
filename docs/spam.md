@@ -1,6 +1,6 @@
 # Python
 
-## Linux Namespace Relations
+## 💤Linux Namespace Relations
 
 Toy around with discovering Linux kernel namespaces using this
 [linuxns_rel](https://thediveo.github.io/linuxns_rel) easy-to-use Python
@@ -12,4 +12,4 @@ package, but instead complements it.
 The `linuxns_rel` library actually sired the much more comprehensive
 [lxkns](/gone?id=lxkns) Go module.
 
-In consequence, this Python library is now retired.
+💤 In consequence, this Python library is now retired.

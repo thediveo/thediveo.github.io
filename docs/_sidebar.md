@@ -1,5 +1,6 @@
 <!-- markdownlint-disable-next-line MD041 -->
 * Posts
+  * [Linux Namespaces In Depth](/art/lxnamespaces)
   * [systemd-notworkd](/art/notworkd)
   * [C(r)apabilities Illustrated](/art/capabilities)
   * [Plugins &amp; Generics](/art/plug-generics)

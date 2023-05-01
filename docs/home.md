@@ -4,6 +4,8 @@
 
 <div class="spaced">
 
+- [Linux namespaces in Depth](/art/lxnamespaces) – _where spaces have no names and
+  containers are lies._
 - [systemd-notworkd](/art/notworkd) – _thank you for tripping up network-related
   unit tests_.
 - [C(r)apabilities Illustrated](/art/capabilities) – _Professor Lipton and the

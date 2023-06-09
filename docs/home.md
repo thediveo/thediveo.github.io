@@ -4,6 +4,8 @@
 
 <div class="spaced">
 
+- [Multi-Arch Images with cgo](/art/multiarchcgo) – _cross-compiling in Alpine
+  build stages that require cgo._
 - [Go Workspaces in Container Builds](/art/localwscontainer) – _an adaptive
   build stage that works both with your local Go workspace as well as in your
   pipelines._

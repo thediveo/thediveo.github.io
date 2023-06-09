@@ -1,5 +1,6 @@
 <!-- markdownlint-disable-next-line MD041 -->
 * Posts
+  * [Multi-Arch Images w/ cgo](/art/multiarchcgo)
   * [Go Workspaces in Container Builds](/art/localwscontainer)
   * [Linux Namespaces In Depth](/art/lxnamespaces)
   * [systemd-notworkd](/art/notworkd)

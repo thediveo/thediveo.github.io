@@ -4,6 +4,9 @@
 
 <div class="spaced">
 
+- [Go Workspaces in Container Builds](/art/localwscontainer) – _an adaptive
+  build stage that works both with your local Go workspace as well as in your
+  pipelines._
 - [Linux Namespaces in Depth](/art/lxnamespaces) – _where spaces have no names and
   containers are lies._
 - [systemd-notworkd](/art/notworkd) – _thank you for tripping up network-related

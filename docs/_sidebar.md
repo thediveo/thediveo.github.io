@@ -1,5 +1,6 @@
 <!-- markdownlint-disable-next-line MD041 -->
 * Posts
+  * [Go Workspaces in Container Builds](/art/localwscontainer)
   * [Linux Namespaces In Depth](/art/lxnamespaces)
   * [systemd-notworkd](/art/notworkd)
   * [C(r)apabilities Illustrated](/art/capabilities)

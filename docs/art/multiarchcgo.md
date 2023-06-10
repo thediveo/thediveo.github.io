@@ -7,14 +7,17 @@ platform instead of needing emulation (namely, [QEMU](https://www.qemu.org/)).
 
 Unfortunately, things get nasty when building a cross-platform Go binary
 requires [cgo](https://pkg.go.dev/cmd/cgo), as cgo then requires a
-cross-compiling C compile and toolchain.
+cross-compiling C compiler and toolchain.
 
-Unfortunately, Alpine doesn't come with a cross-compiler package. 😭
+Sadly, Alpine doesn't come with a gcc cross-compiler package. 😭
 
-Fortunately, there are [@tonistiigi/xx](https://github.com/tonistiigi/xx)'s [xx
-– Dockerfile cross-compilation
-helpers](https://github.com/tonistiigi/xx/blob/master/README.md) that support
-Alpine and Debian. Especially the [Go /
+## Cross-Compiling with "xx"
+
+Fortunately, there are clang and
+[@tonistiigi/xx](https://github.com/tonistiigi/xx)'s [xx – Dockerfile
+cross-compilation
+helpers](https://github.com/tonistiigi/xx/blob/master/README.md). The "xx"
+helpers (oh, well) supports Alpine and Debian. Especially the [Go /
 Cgo](https://github.com/tonistiigi/xx/blob/master/README.md#go--cgo) section is
 of interest here: it comes with a neat `xx-go` wrapper that replaces the normal
 `go` invocation.
@@ -51,9 +54,9 @@ RUN --mount=target=. \
     --mount=type=cache,target=/root/.cache/go-build \
     --mount=type=cache,target=/go/pkg \
     xx-go build -v -tags osusergo,netgo \
-        -ldflags "-s -w" \
+        -ldflags "-extldflags '-static' -s -w" \
         -o /lxkns ./cmd/lxkns && \
-    xx-verify /lxkns
+    xx-verify --static /lxkns
 ```
 
 Please note how this first installs `clang` and `lld` packages, and then copies
@@ -71,6 +74,13 @@ Building the Go binary then is wrapped in `xx-go` instead of `go`, but otherwise
 is the same as before. This wrapper will automatically correctly set `GOOS`,
 `GOARCH`, `GOARM`, et cetera, so we don't need to handle this ourselves.
 
+## Static Binaries
+
+In order to [create a static binary](https://www.arp242.net/static-go.html) we
+not only need the `osusergo,netgo` build flags, but also have to add
+`-extldflags=-static` to our `-ldflags`.
+
 `xx-verify` is a nice touch to run a final sanity-check on the resulting binary
 to ensure that we in fact ended up with a binary for the desired target
-platform.
+platform. The additional `--static` ensures that there were no shared libraries
+sneaking into our build.

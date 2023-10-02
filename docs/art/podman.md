@@ -1,11 +1,35 @@
 # alias podman=p.o.'d.man
 <img title="podman" src="art/_images/sealwatcher.png" width="150" style="float: right;">
 
+- updated: podman support archived, see below.
 - updated: new section "[Rootless Rudeness](#rootless-rudeness)"
 
 All I wanted to do was to add [Podman](https://podman.io) awareness to my
 [lxkns](https://github.com/thediveo/lxkns) discovery engine for Linux kernel
 namespaces and containers. I went down a Monty Python rabbit hole.
+
+## Always Look on the Bright Side of Container Life
+
+After having watched the podman project for over a year now (pun intended), I
+don't see any signs of the major issue of [remote API users getting relocated
+into a new user namespace against their
+will](https://github.com/containers/podman/discussions/15872) getting tackled or
+even fixed. In addition, the podman-specific API seems to have fallen flat
+anyway so there isn't any good reason in trying to support it; more so as there
+are still API v3 packages in major distributions to which API v4 client cannot
+connect, even if they would fine with downgrading. And finally, building any
+podman API client is so painful with lots of unnecessary C libs enforced that
+are not needed in any way, as well as lots of build tags.
+
+There doesn't seem to be any real need for "pods" outside of Kubernetes, the
+Docker API is firmly established as a workhorse and doesn't suffer from
+versioning black-outs. When using Kubernetes, there's the CRI API with
+[containerd](https://containerd.io) and [cri-o](https://cri-o.io),
+
+So, I decided to archive the
+[sealwatcher](https://github.com/thediveo/sealwatcher) project. It was an
+experience worth having as it gave me much better insight into podman than the
+official propaganda.
 
 ## The Meaning of Life: Don't Be Docker
 

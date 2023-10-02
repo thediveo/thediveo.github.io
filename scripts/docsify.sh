@@ -9,4 +9,4 @@ if ! command -v docsify-cli &>/dev/null; then
     (cd $HOME && npm install docsify-cli)
 fi
 
-docsify serve ./docs
+docsify serve -p 3300 -P 3301 ./docs

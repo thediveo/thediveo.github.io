@@ -4,6 +4,8 @@
 
 <div class="spaced">
 
+- [archiving sealwatcher](/art/podman) – _ending the experiment of supporting
+  the podman API._
 - [Multi-Arch Images with cgo](/art/multiarchcgo) – _cross-compiling in Alpine
   build stages that require cgo._
 - [Go Workspaces in Container Builds](/art/localwscontainer) – _an adaptive

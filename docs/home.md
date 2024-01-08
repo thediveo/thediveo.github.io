@@ -4,6 +4,8 @@
 
 <div class="spaced">
 
+- [Finding Turtles Everywhere](/art/turtles) – _automatically finding container
+  engines also inside containers, now including even socket-activated engines._
 - [archiving sealwatcher](/art/podman) – _ending the experiment of supporting
   the podman API._
 - [Multi-Arch Images with cgo](/art/multiarchcgo) – _cross-compiling in Alpine
@@ -11,8 +13,8 @@
 - [Go Workspaces in Container Builds](/art/localwscontainer) – _an adaptive
   build stage that works both with your local Go workspace as well as in your
   pipelines._
-- [Linux Namespaces in Depth](/art/lxnamespaces) – _where spaces have no names and
-  containers are lies._
+- [Linux Namespaces in Depth](/art/lxnamespaces) – _where spaces have no names
+  and containers are lies._
 - [systemd-notworkd](/art/notworkd) – _thank you for tripping up network-related
   unit tests_.
 - [C(r)apabilities Illustrated](/art/capabilities) – _Professor Lipton and the

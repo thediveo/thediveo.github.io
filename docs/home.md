@@ -4,6 +4,9 @@
 
 <div class="spaced">
 
+- [Morbyd Containers](/art/morbyd) – _a thin layer on top of the standard Docker
+  Go client to easily build and run throw-away test Docker images and
+  containers, and running commands inside them._
 - [Finding Turtles Everywhere](/art/turtles) – _automatically finding container
   engines also inside containers, now including even socket-activated engines._
 - [archiving sealwatcher](/art/podman) – _ending the experiment of supporting

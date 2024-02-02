@@ -15,8 +15,8 @@ proprietary Docker client that is incompatible with Docker's stdout/stderr
 streaming using `100 CONTINUE` headers. No reaction for months after filing this
 issue, just total silence. Then there is `dockertest`'s callback function option
 setting exposing the naked Docker API data structures and that begs the
-question: why not real _option functions_? The incorrect implementation of
-tri-state flags as only "true" or "default" (basically, "omitempty" in
+question: why not real _option functions_? Next up: the incorrect implementation
+of tri-state flags as only "true" or "default" (basically, "omitempty" in
 `json.Marshal` parlance), but not as "true", "false", and "default". By then 23%
 (sic!) code coverage probably doesn't matter anyway. And some missing newer API
 parameters that I happen to need in my unit tests.

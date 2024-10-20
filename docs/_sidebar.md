@@ -1,5 +1,6 @@
 <!-- markdownlint-disable-next-line MD041 -->
 * Posts
+  * [sys/class/net](/art/sys-class-net)
   * [Morbyd Containers](/art/morbyd)
   * [Finding Turtles Everywhere](/art/turtles)
   * [Multi-Arch Images w/ cgo](/art/multiarchcgo)

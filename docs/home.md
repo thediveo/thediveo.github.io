@@ -4,6 +4,8 @@
 
 <div class="spaced">
 
+- [sys/class/net](/art/sys-class-net) – _it's not adaptive in the way you might
+  have read or think it is._
 - [Morbyd Containers](/art/morbyd) – _a thin layer on top of the standard Docker
   Go client to easily build and run throw-away test Docker images and
   containers, and running commands inside them._

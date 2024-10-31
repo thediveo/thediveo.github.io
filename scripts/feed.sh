@@ -29,7 +29,7 @@ cat <<EOF >"${DOCSDIR}/${FEEDFILENAME}"
         <title>TheDiveO's Open Source</title>
         <link>${BLOGURL}</link>
         <atom:link href="${BLOGURL}/${FEEDFILENAME}" rel="self" type="application/rss+xml" />
-        <description>Background information on TheDiveO's Open Source.</description>
+        <description>Background information on TheDiveO's Open Source works.</description>
 EOF
 
 # For each article/post with proper front matter, generate an RSS feed item.

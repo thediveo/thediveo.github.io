@@ -2,6 +2,8 @@
 
 ## Posts
 
+<a href="/feed.xml">![RSS Feed](https://img.shields.io/badge/RSS-FFA500?style=flat&logo=rss&logoColor=white)</a>
+
 <div class="spaced">
 
 - [sys/class/net](/art/sys-class-net) – _it's not adaptive in the way you might

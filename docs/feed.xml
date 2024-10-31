@@ -4,7 +4,7 @@
     <title>TheDiveO's Open Source</title>
     <link>https://thediveo.github.io</link>
     <atom:link href="https://thediveo.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <description>Background information on TheDiveO's Open Source.</description>
+    <description>Background information on TheDiveO's Open Source works.</description>
     <item>
       <title>sys/class/net</title>
       <link>https://thediveo.github.io/#/art/sys-class-net</link>

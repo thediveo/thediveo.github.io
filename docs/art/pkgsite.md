@@ -1,3 +1,8 @@
+---
+title: "godoc ⇢ pkgsite"
+description: "trusty ol' godoc has been deprecated, but how to actually use pkgsite locally?"
+---
+
 # ~~godoc~~ ⇢ pkgsite
 
 Coming as a rather nasty surprise to those Go developers that actually write,

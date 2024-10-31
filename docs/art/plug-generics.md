@@ -1,3 +1,8 @@
+---
+title: "Plugins and Generics"
+description: "Go Generics to the rescue when managing the exposed functions and interfaces of plugins."
+---
+
 # Plugins and Generics
 
 Wikipedia nicely [describes a

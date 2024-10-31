@@ -1,3 +1,8 @@
+---
+title: "Linux Namespaces In Depth"
+description: "where spaces have no names and containers are lies."
+---
+
 # Linux Namespaces In Depth
 
 This post sheds more light on the details underpinning the Linux kernel's

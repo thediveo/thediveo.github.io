@@ -1,3 +1,8 @@
+---
+title: "Docker cap-add & cap-drop"
+description: "what Docker never managed to document, except somewhere inside their huge code base."
+---
+
 # Docker cap-add & cap-drop
 
 **[Linux

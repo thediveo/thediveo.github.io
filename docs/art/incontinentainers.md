@@ -1,3 +1,8 @@
+---
+title: "Incontinentainers"
+description: "incontinentainers are not as bad as some want to make you believe, because they’re much easier to diagnose than virtual machines."
+---
+
 # Incontinentainers
 <img src="art/_images/incontinentainer.png" style="width: 10em; float: right; padding-left: 0.5em;" title="Incontinentainer">
 

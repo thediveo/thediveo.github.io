@@ -1,4 +1,9 @@
-# Capabilities Illustrated
+---
+title: "C(r)apabilities Illustrated"
+description: "Professor Lipton and the Diabolical POSIX Legacy."
+---
+
+# C(r)apabilities Illustrated
 
 [Linux capabilities](https://man7.org/linux/man-pages/man7/capabilities.7.html)
 – the posterchildren of security. Most funny when combined with such advice such

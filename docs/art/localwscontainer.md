@@ -1,3 +1,8 @@
+---
+title: "Go Workspaces in Container Builds"
+description: "an adaptive build stage that works both with your local Go workspace as well as in your pipelines."
+---
+
 # Go Workspaces in Container Builds
 
 _...and now for something completely different_: may I please have my local [Go

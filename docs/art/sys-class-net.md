@@ -1,3 +1,8 @@
+---
+title: "sys/class/net"
+description: "it's not adaptive in the way you might have read or think it is."
+---
+
 # `sys/class/net`
 
 Lazily entering the network namespace of a container and then relying on

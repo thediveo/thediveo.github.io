@@ -1,3 +1,8 @@
+---
+title: "M0 is Special"
+description: "why you should OSLockThread() your initial goroutine when hopping namespaces from throw-away goroutines."
+---
+
 # M0 _is_ Special
 
 ...an adventure in Goroutines with locked threads, Linux, the task group leader,

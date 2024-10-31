@@ -1,3 +1,8 @@
+---
+title: "Gomega Tricks"
+description: "use matchers not only for assertions, but also for filtering … and reduce test boilerplate."
+---
+
 # Gomega Tricks
 
 [Gomega](https://onsi.github.io/gomega/) is a matcher/assertion library, with

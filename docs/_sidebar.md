@@ -4,7 +4,7 @@
   * [Finding Turtles Everywhere](/art/turtles)
   * [Multi-Arch Images w/ cgo](/art/multiarchcgo)
   * [Go Workspaces in Container Builds](/art/localwscontainer)
-  * [Linux Namespaces In Depth](/art/lxnamespaces)
+  * [Linux Namespaces in Depth](/art/lxnamespaces)
   * [systemd-notworkd](/art/notworkd)
   * [C(r)apabilities Illustrated](/art/capabilities)
   * [Plugins &amp; Generics](/art/plug-generics)

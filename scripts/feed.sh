@@ -70,7 +70,7 @@ for post in "${DOCSDIR}/${POSTSDIR}"/*.md; do
     itemmatters["${dateindex}//link"]="/${POSTSDIR}/${basename%.*}"
     itemmatters["${dateindex}//title"]="${title}"
     itemmatters["${dateindex}//shorttitle"]="${shorttitle}"
-    itemmatters["${dateindex}//description"]="${title}"
+    itemmatters["${dateindex}//description"]="${description}"
 
     pubdate=$(LC_TIME="C" date -d "${date}" +"%a, %d %b %Y %H:%M:%S %z")
     echo "$post....$date"
@@ -116,6 +116,7 @@ EOF
 xmllint --format "${DOCSDIR}/${FEEDFILENAME}" -o "${DOCSDIR}/${FEEDFILENAME}.new"
 mv --force "${DOCSDIR}/${FEEDFILENAME}.new" "${DOCSDIR}/${FEEDFILENAME}"
 
+# Replace the post section of the sidebar with an updated version...
 echo -e "${STEP}Generating sidebar post items...${RESET}"
 postitems=()
 for date in "${sorteddates[@]}"; do
@@ -132,5 +133,26 @@ cutpaste=( # https://unix.stackexchange.com/a/49438
     "-e" " }; /^\* /!d }"
 )
 sed -i "${cutpaste[@]}" "${DOCSDIR}/_sidebar.md"
+
+# Replace the post section of the home document with an updated version...
+echo -e "${STEP}Generating home document post items...${RESET}"
+postitems=()
+for date in "${sorteddates[@]}"; do
+    title="${itemmatters[${date}//title]}"
+    description="${itemmatters[${date}//description]}"
+    link="${itemmatters[${date}//link]}"
+    postitems+=("- [${title}](${link}) – _${description}_")
+done
+homeposts=$(mktemp --tmpdir "$(basename "$0")-XXX.home.posts")
+trap "rm -f $(printf %q "${homeposts}")" EXIT
+printf "%s\n" "${postitems[@]}" >${homeposts}
+cutpaste=( # https://unix.stackexchange.com/a/49438
+    "-e" "/^<div class=\"posts\">/,/^<\/div>/{ /^<div class=\"posts\">/{ p; a \\\\n"
+    "-e" "; r "${homeposts}""
+    "-e" "; a \\\\n"
+    "-e" " }; /^<\/div>/!d }"
+)
+sed -i "${cutpaste[@]}" "${DOCSDIR}/home.md"
+
 
 echo -e "${SUCCESS}Success.${RESET}"

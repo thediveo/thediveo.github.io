@@ -1,5 +1,6 @@
 ---
 title: "alias podman=p.o.'d.man"
+shorttitle: "p.o.'d.man"
 description: "down the rabbit hole of rootless rudeness."
 ---
 

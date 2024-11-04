@@ -1,5 +1,6 @@
 ---
 title: "Plugins and Generics"
+shorttitle: "Plugins & Generics"
 description: "Go Generics to the rescue when managing the exposed functions and interfaces of plugins."
 ---
 

@@ -1,5 +1,6 @@
 ---
 title: "Multi-Arch Images with cgo"
+shorttitle: "Multi-Arch Images w/ cgo"
 description: "cross-compiling in Alpine build stages that require cgo."
 ---
 

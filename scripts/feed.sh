@@ -1,9 +1,16 @@
 #!/bin/bash
+
+# Generate the following elements based on articles/posts:
+# 1. RSS feed XML file
+# 2. sidebar Posts section
+
+BLOGURL="https://thediveo.github.io"
+
 DOCSDIR="docs"
 POSTSDIR="art"
 FEEDFILENAME="feed.xml"
 
-BLOGURL="https://thediveo.github.io"
+POSTSSIDEBARSECT="Posts"
 
 LGRAY="\033[0;37m"
 GREEN="\033[0;32m"
@@ -37,14 +44,19 @@ echo -e "${STEP}Scanning for posts in ${DOCSDIR}/${POSTSDIR}...${RESET}"
 declare -A items
 declare -A itemmatters
 for post in "${DOCSDIR}/${POSTSDIR}"/*.md; do
-    title=$(yq --front-matter=extract '.title' "${post}" 2>/dev/null)
-    description=$(yq --front-matter=extract '.description' "${post}" 2>/dev/null)
-    if [[ -z "$title" || -z "$description" ]]; then
+    title=$(yq --front-matter=extract '.title // ""' "${post}" 2>/dev/null)
+    shorttitle=$(yq --front-matter=extract '.shorttitle // ""' "${post}" 2>/dev/null)
+    description=$(yq --front-matter=extract '.description // ""' "${post}" 2>/dev/null)
+    if [[ -z "${title}" || -z "${description}" ]]; then
         echo -e "${SKIPPED}Skipping: ${post}${RESET}"
         continue
     fi
+    if [[ -z "${shorttitle}" ]]; then
+        shorttitle="${title}"
+    fi
 
     title=$(escape "${title}")
+    shorttitle=$(escape "${shorttitle}")
     description=$(escape "${description}")
     date=$(git log --format="%ci" --diff-filter=A -- "${post}" | head -n 1)
     if [ -z "${date}" ]; then
@@ -57,6 +69,7 @@ for post in "${DOCSDIR}/${POSTSDIR}"/*.md; do
     link="${BLOGURL}/#/${POSTSDIR}/${basename%.*}"
     itemmatters["${dateindex}//link"]="/${POSTSDIR}/${basename%.*}"
     itemmatters["${dateindex}//title"]="${title}"
+    itemmatters["${dateindex}//shorttitle"]="${shorttitle}"
     itemmatters["${dateindex}//description"]="${title}"
 
     pubdate=$(LC_TIME="C" date -d "${date}" +"%a, %d %b %Y %H:%M:%S %z")
@@ -106,10 +119,18 @@ mv --force "${DOCSDIR}/${FEEDFILENAME}.new" "${DOCSDIR}/${FEEDFILENAME}"
 echo -e "${STEP}Generating sidebar post items...${RESET}"
 postitems=()
 for date in "${sorteddates[@]}"; do
-    title="${itemmatters[${date}//title]}"
+    title="${itemmatters[${date}//shorttitle]}"
     link="${itemmatters[${date}//link]}"
     echo -e "${NOTE}   ${title} ⇢ ${link}"
     postitems+=("  * [${title}](${link})")
 done
+sidebarposts=$(mktemp --tmpdir "$(basename "$0")-XXX.sidebar.posts")
+trap "rm -f $(printf %q "${sidebarposts}")" EXIT
+printf "%s\n" "${postitems[@]}" >${sidebarposts}
+cutpaste=( # https://unix.stackexchange.com/a/49438
+    "-e" "/^\* ${POSTSSIDEBARSECT}/,/^\* /{ /^\* ${POSTSSIDEBARSECT}/{ r "${sidebarposts}""
+    "-e" " }; /^\* /!d }"
+)
+sed -i "${cutpaste[@]}" "${DOCSDIR}/_sidebar.md"
 
 echo -e "${SUCCESS}Success.${RESET}"

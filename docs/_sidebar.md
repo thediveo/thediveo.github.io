@@ -1,4 +1,3 @@
-<!-- markdownlint-disable-next-line MD041 -->
 * Posts
   * [sys/class/net](/art/sys-class-net)
   * [Morbyd Containers](/art/morbyd)
@@ -9,14 +8,14 @@
   * [systemd-notworkd](/art/notworkd)
   * [C(r)apabilities Illustrated](/art/capabilities)
   * [Plugins &amp; Generics](/art/plug-generics)
-  * [Gomega tricks](/art/gomega-tricks)
-  * [p.o.'d.man](/art/podman)
-  * [~~godoc~~ ⇢ pkgsite](/art/pkgsite)
+  * [Gomega Tricks](/art/gomega-tricks)
+  * [p.o.&#39;d.man](/art/podman)
+  * [godoc ⇢ pkgsite](/art/pkgsite)
+  * [M0 is Special](/art/namspill)
   * [Testing for Go Leaks](/art/leaky)
-  * [M0 _is_ Special](/art/namspill)
-  * [Capabilities Add/Drop](/art/cap-add-drop)
-  * [Incontinentainers](/art/incontinentainers)
   * [Debug Go as Root](/art/debugroot)
+  * [Incontinentainers](/art/incontinentainers)
+  * [Capabilities Add/Drop](/art/cap-add-drop)
 * Projects
   * [Go-ing Nowhere](/gone)
     * [Namespaces & Containers](/go-low)

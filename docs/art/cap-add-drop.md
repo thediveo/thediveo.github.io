@@ -1,6 +1,6 @@
 ---
 title: "Docker cap-add & cap-drop"
-shorttitle: "Capabilities Add/Drop"
+shorttitle: "Docker Caps Add/Drop"
 description: "what Docker never managed to document, except somewhere inside their huge code base."
 ---
 

@@ -15,7 +15,7 @@
   * [Testing for Go Leaks](/art/leaky)
   * [Debug Go as Root](/art/debugroot)
   * [Incontinentainers](/art/incontinentainers)
-  * [Capabilities Add/Drop](/art/cap-add-drop)
+  * [Docker Caps Add/Drop](/art/cap-add-drop)
 * Projects
   * [Go-ing Nowhere](/gone)
     * [Namespaces & Containers](/go-low)

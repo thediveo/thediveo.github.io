@@ -141,7 +141,7 @@ for date in "${sorteddates[@]}"; do
     title="${itemmatters[${date}//title]}"
     description="${itemmatters[${date}//description]}"
     link="${itemmatters[${date}//link]}"
-    postitems+=("- [${title}](${link}) – _${description}_")
+    postitems+=("- [${title}](${link}) – _${description}_ <span class=\"postdate\">$(date -d "${date}" +"%Y-%m-%d")</span>")
 done
 homeposts=$(mktemp --tmpdir "$(basename "$0")-XXX.home.posts")
 trap "rm -f $(printf %q "${homeposts}")" EXIT

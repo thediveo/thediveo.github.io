@@ -1,5 +1,6 @@
 ---
 title: "Testing (Your Go) for Leaks"
+shorttitle: "Testing for Go Leaks"
 description: "improve your Go unit tests with Goroutine and file descriptor leak checking."
 ---
 

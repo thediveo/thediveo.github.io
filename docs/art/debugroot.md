@@ -1,5 +1,6 @@
 ---
 title: "Debug Go Programs as Root in VSCode"
+shorttitle: "Debug Go as Root"
 description: "the Go extension's documentation needs some debugging, too."
 ---
 

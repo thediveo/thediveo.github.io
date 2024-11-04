@@ -141,6 +141,10 @@
         filter: invert(1) brightness(0.82);
       }
 
+      div.posts ul > li + li {
+        padding-top: 0.5ex;
+      }
+
       div.spaced ul > li + li {
         padding-top: 0.5ex;
       }
@@ -223,6 +227,17 @@
       .footnote-text {
         font-size: 90%;
         font-style: italic;
+      }
+
+      span.postdate {
+        opacity: 70%;
+        font-size: 85%;
+      }
+      span.postdate::before {
+        content: "[";
+      }
+      span.postdate::after {
+        content: "]";
       }
     </style>
   </head>

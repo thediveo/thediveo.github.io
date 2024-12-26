@@ -1,4 +1,6 @@
+<!-- markdownlint-disable-next-line first-line-h1 -->
 * Posts
+  * [Go Directory Iterator](/art/iterate-dir)
   * [sys/class/net](/art/sys-class-net)
   * [Morbyd Containers](/art/morbyd)
   * [Finding Turtles Everywhere](/art/turtles)

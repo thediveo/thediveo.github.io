@@ -6,122 +6,129 @@
     <atom:link href="https://thediveo.github.io/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Background information on TheDiveO's Open Source works.</description>
     <item>
+      <title>Go Directory Iterator</title>
+      <link>https://thediveo.github.io/#/art/iterate-dir</link>
+      <description>a Go iterator to loop over directory entries efficiently.</description>
+      <pubDate>Sat, 28 Dec 2024 21:47:41 +0000</pubDate>
+      <guid>https://thediveo.github.io/#/art/iterate-dir</guid>
+    </item>
+    <item>
       <title>sys/class/net</title>
       <link>https://thediveo.github.io/#/art/sys-class-net</link>
       <description>it's not adaptive in the way you might have read or think it is.</description>
-      <pubDate>Sun, 20 Oct 2024 21:52:58 +0200</pubDate>
+      <pubDate>Sun, 20 Oct 2024 19:52:58 +0000</pubDate>
       <guid>https://thediveo.github.io/#/art/sys-class-net</guid>
     </item>
     <item>
       <title>Morbyd Containers</title>
       <link>https://thediveo.github.io/#/art/morbyd</link>
       <description>a thin layer on top of the standard Docker Go client to easily build and run throw-away test Docker images and containers, and running commands inside them.</description>
-      <pubDate>Fri, 02 Feb 2024 21:49:17 +0100</pubDate>
+      <pubDate>Fri, 02 Feb 2024 20:49:17 +0000</pubDate>
       <guid>https://thediveo.github.io/#/art/morbyd</guid>
     </item>
     <item>
       <title>Finding Turtles Everywhere</title>
       <link>https://thediveo.github.io/#/art/turtles</link>
       <description>automatically finding container engines also inside containers, now including even socket-activated engines.</description>
-      <pubDate>Tue, 09 Jan 2024 13:51:42 +0100</pubDate>
+      <pubDate>Tue, 09 Jan 2024 12:51:42 +0000</pubDate>
       <guid>https://thediveo.github.io/#/art/turtles</guid>
     </item>
     <item>
       <title>Multi-Arch Images with cgo</title>
       <link>https://thediveo.github.io/#/art/multiarchcgo</link>
       <description>cross-compiling in Alpine build stages that require cgo.</description>
-      <pubDate>Fri, 09 Jun 2023 21:36:52 +0200</pubDate>
+      <pubDate>Fri, 09 Jun 2023 19:36:52 +0000</pubDate>
       <guid>https://thediveo.github.io/#/art/multiarchcgo</guid>
     </item>
     <item>
       <title>Go Workspaces in Container Builds</title>
       <link>https://thediveo.github.io/#/art/localwscontainer</link>
       <description>an adaptive build stage that works both with your local Go workspace as well as in your pipelines.</description>
-      <pubDate>Fri, 09 Jun 2023 21:11:56 +0200</pubDate>
+      <pubDate>Fri, 09 Jun 2023 19:11:56 +0000</pubDate>
       <guid>https://thediveo.github.io/#/art/localwscontainer</guid>
     </item>
     <item>
       <title>Linux Namespaces in Depth</title>
       <link>https://thediveo.github.io/#/art/lxnamespaces</link>
       <description>where spaces have no names and containers are lies.</description>
-      <pubDate>Mon, 01 May 2023 19:52:52 +0200</pubDate>
+      <pubDate>Mon, 01 May 2023 17:52:52 +0000</pubDate>
       <guid>https://thediveo.github.io/#/art/lxnamespaces</guid>
     </item>
     <item>
       <title>systemd-notworkd</title>
       <link>https://thediveo.github.io/#/art/notworkd</link>
       <description>thank you for tripping up network-related unit tests.</description>
-      <pubDate>Mon, 10 Apr 2023 19:53:57 +0200</pubDate>
+      <pubDate>Mon, 10 Apr 2023 17:53:57 +0000</pubDate>
       <guid>https://thediveo.github.io/#/art/notworkd</guid>
     </item>
     <item>
       <title>C(r)apabilities Illustrated</title>
       <link>https://thediveo.github.io/#/art/capabilities</link>
       <description>Professor Lipton and the Diabolical POSIX Legacy.</description>
-      <pubDate>Fri, 10 Feb 2023 22:13:55 +0100</pubDate>
+      <pubDate>Fri, 10 Feb 2023 21:13:55 +0000</pubDate>
       <guid>https://thediveo.github.io/#/art/capabilities</guid>
     </item>
     <item>
       <title>Plugins and Generics</title>
       <link>https://thediveo.github.io/#/art/plug-generics</link>
       <description>Go Generics to the rescue when managing the exposed functions and interfaces of plugins.</description>
-      <pubDate>Tue, 18 Oct 2022 20:30:37 +0200</pubDate>
+      <pubDate>Tue, 18 Oct 2022 18:30:37 +0000</pubDate>
       <guid>https://thediveo.github.io/#/art/plug-generics</guid>
     </item>
     <item>
       <title>Gomega Tricks</title>
       <link>https://thediveo.github.io/#/art/gomega-tricks</link>
       <description>use matchers not only for assertions, but also for filtering … and reduce test boilerplate.</description>
-      <pubDate>Sun, 25 Sep 2022 21:41:10 +0200</pubDate>
+      <pubDate>Sun, 25 Sep 2022 19:41:10 +0000</pubDate>
       <guid>https://thediveo.github.io/#/art/gomega-tricks</guid>
     </item>
     <item>
       <title>alias podman=p.o.'d.man</title>
       <link>https://thediveo.github.io/#/art/podman</link>
       <description>down the rabbit hole of rootless rudeness.</description>
-      <pubDate>Thu, 15 Sep 2022 21:59:13 +0200</pubDate>
+      <pubDate>Thu, 15 Sep 2022 19:59:13 +0000</pubDate>
       <guid>https://thediveo.github.io/#/art/podman</guid>
     </item>
     <item>
       <title>godoc ⇢ pkgsite</title>
       <link>https://thediveo.github.io/#/art/pkgsite</link>
       <description>trusty ol' godoc has been deprecated, but how to actually use pkgsite locally?</description>
-      <pubDate>Thu, 21 Jul 2022 21:41:56 +0200</pubDate>
+      <pubDate>Thu, 21 Jul 2022 19:41:56 +0000</pubDate>
       <guid>https://thediveo.github.io/#/art/pkgsite</guid>
     </item>
     <item>
       <title>M0 is Special</title>
       <link>https://thediveo.github.io/#/art/namspill</link>
       <description>why you should OSLockThread() your initial goroutine when hopping namespaces from throw-away goroutines.</description>
-      <pubDate>Fri, 17 Jun 2022 16:14:38 +0200</pubDate>
+      <pubDate>Fri, 17 Jun 2022 14:14:38 +0000</pubDate>
       <guid>https://thediveo.github.io/#/art/namspill</guid>
     </item>
     <item>
       <title>Testing (Your Go) for Leaks</title>
       <link>https://thediveo.github.io/#/art/leaky</link>
       <description>improve your Go unit tests with Goroutine and file descriptor leak checking.</description>
-      <pubDate>Sun, 15 May 2022 22:38:02 +0200</pubDate>
+      <pubDate>Sun, 15 May 2022 20:38:02 +0000</pubDate>
       <guid>https://thediveo.github.io/#/art/leaky</guid>
     </item>
     <item>
       <title>Debug Go Programs as Root in VSCode</title>
       <link>https://thediveo.github.io/#/art/debugroot</link>
       <description>the Go extension's documentation needs some debugging, too.</description>
-      <pubDate>Sun, 15 May 2022 21:39:14 +0200</pubDate>
+      <pubDate>Sun, 15 May 2022 19:39:14 +0000</pubDate>
       <guid>https://thediveo.github.io/#/art/debugroot</guid>
     </item>
     <item>
       <title>Incontinentainers</title>
       <link>https://thediveo.github.io/#/art/incontinentainers</link>
       <description>incontinentainers are not as bad as some want to make you believe, because they’re much easier to diagnose than virtual machines.</description>
-      <pubDate>Thu, 10 Mar 2022 00:01:41 +0100</pubDate>
+      <pubDate>Wed, 09 Mar 2022 23:01:41 +0000</pubDate>
       <guid>https://thediveo.github.io/#/art/incontinentainers</guid>
     </item>
     <item>
       <title>Docker cap-add &amp; cap-drop</title>
       <link>https://thediveo.github.io/#/art/cap-add-drop</link>
       <description>what Docker never managed to document, except somewhere inside their huge code base.</description>
-      <pubDate>Wed, 08 Dec 2021 21:26:57 +0100</pubDate>
+      <pubDate>Wed, 08 Dec 2021 20:26:57 +0000</pubDate>
       <guid>https://thediveo.github.io/#/art/cap-add-drop</guid>
     </item>
   </channel>

@@ -122,7 +122,7 @@
         padding-left: 2ex;
         filter: invert(1) brightness(0.3);
       }
-      a[href^="https://pkg.go.dev/"]::before
+      a[href^="https://pkg.go.dev/"]::before, a[href^="https://cs.opensource.google/go/"]::before
       {
         background: no-repeat var(--go-icon) !important;
         content: "";
@@ -130,7 +130,7 @@
         padding-left: 2.75ex;
         filter: invert(1) brightness(0.3);
       }
-      aside a[target="_blank"]::after, a[href^="https://pkg.go.dev/"]::after, a[href^="https://github.com/"]::after
+      aside a[target="_blank"]::after, a[href^="https://pkg.go.dev/"]::after, a[href^="https://cs.opensource.google/go/"]::after, a[href^="https://github.com/"]::after
       {
         display: none !important;
       }
@@ -156,6 +156,13 @@
       div.docsify-pagination-container {
         margin-top: 2.5em;
         margin-bottom: 2.5em;
+      }
+
+      .markdown-section
+        #docsify-darklight-theme[data-link-title="dark"]
+        ~ *
+        code:not([class*="lang-"]):not([class*="language-"]) {
+        background-color: hsla(from var(--code-inline-background) h s l / 20%);
       }
 
       .alert.callout.emphasis-ours::after {

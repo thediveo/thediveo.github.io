@@ -1,0 +1,39 @@
+{
+    "name": "thediveo.github.io",
+    "portsAttributes": {
+        "3300": {
+            "label": "thediveo site",
+            "onAutoForward": "notify",
+            "protocol": "http"
+        },
+        "3301": {
+            "label": "site live-reload push channel",
+            "onAutoForward": "silent",
+            "protocol": "http"
+        }
+    },
+
+    "build":{
+      "dockerfile": "Dockerfile"  
+    },
+
+    "features": {
+        // https://github.com/devcontainers/features/tree/main/src/node
+        "ghcr.io/devcontainers/features/node:1": {},
+        "./docsify": {
+            "port": "3300",
+            "livereload-port": "3301"
+        }
+    },
+    
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "DavidAnson.vscode-markdownlint",
+                "stkb.rewrap",
+                "brunnerh.insert-unicode",
+                "mhutchie.git-graph"
+            ]
+        }
+    }
+}

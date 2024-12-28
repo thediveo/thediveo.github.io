@@ -7,6 +7,7 @@
 <div class="posts">
 
 
+- [Go Directory Iterator](/art/iterate-dir) – _a Go iterator to loop over directory entries efficiently._ <span class="postdate">2024-12-28</span>
 - [sys/class/net](/art/sys-class-net) – _it&#39;s not adaptive in the way you might have read or think it is._ <span class="postdate">2024-10-20</span>
 - [Morbyd Containers](/art/morbyd) – _a thin layer on top of the standard Docker Go client to easily build and run throw-away test Docker images and containers, and running commands inside them._ <span class="postdate">2024-02-02</span>
 - [Finding Turtles Everywhere](/art/turtles) – _automatically finding container engines also inside containers, now including even socket-activated engines._ <span class="postdate">2024-01-09</span>

@@ -1,6 +1,6 @@
 ---
 title: "Go Directory Iterator"
-description: "a Go iterator to loop over directory entries efficiently."
+description: "a Go iterator to loop over directory entries more efficiently."
 ---
 
 # A Go Directory Iterator

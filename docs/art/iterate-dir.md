@@ -48,6 +48,32 @@ but only burns CPU cycles and heap memory.
 > [!QUOTE] [...] You can copy the ReadDir source code and customize it. Anyway,
 > I think the os.(*File).ReadDir call is hugely slower than the Sort call[...][^reou]
 
+Let's look at some benchmark profiling figures – please note that the numbers
+don't add up to 100% exactly as there is some other stuff going on outside the
+benchmarks themselves:
+
+<table>
+	<thead>
+		<td>Implementation</td>
+		<td>Num Entries</td>
+		<td>Open</td>
+		<td>Read</td>
+		<td>Generate+Slice</td>
+		<td>Sort</td>
+	</thead>
+	<tr>
+		<td><code>os.ReadDir</code></td><td>16</td>
+		<td>~24%</td><td>~41%</td><td>~10%</td><td>~8%</td>
+	</tr>
+	<tr>
+		<td><code>os.ReadDir</code></td><td>1024</td>
+		<td>~1%</td><td>~44%</td><td>~12%</td><td>~33%</td>
+	</tr>
+</table>
+
+Please note that there is an overhead of at least 10% for allocating the
+directory entries Go objects and maintaining the slice of them.
+
 A slightly better performing `ReadDir` should be easy to derive from the
 implementation of
 [`os.ReadDir`](https://cs.opensource.google/go/go/+/refs/tags/go1.23.4:src/os/dir.go;l=118)
@@ -281,6 +307,40 @@ BenchmarkReadDir/os.NewFile-2            2259210              5317 ns/op        
 ```
 
 Yet still way _too many_ heap allocation, me thinks.
+
+Let's revisit and extend our some benchmark profiling figures – please note that
+the numbers don't add up to 100% exactly as there is some other stuff going on
+outside the benchmarks themselves, as well as the close operations:
+
+<table>
+	<thead>
+		<td>Implementation</td>
+		<td>Num Entries</td>
+		<td>Open</td>
+		<td>Read</td>
+		<td>Generate+Slice</td>
+		<td>Sort</td>
+	</thead>
+	<tr>
+		<td><code>os.ReadDir</code></td><td>16</td>
+		<td>~24%</td><td>~41%</td><td>~10%</td><td>~8%</td>
+	</tr>
+	<tr>
+		<td><code>os.ReadDir</code></td><td>1024</td>
+		<td>~1%</td><td>~44%</td><td>~12%</td><td>~33%</td>
+	</tr>
+	<tr>
+		<td><code>unix.Open</code>+<code>os.NewFile</code></td><td>16</td>
+		<td>~29%</td><td>~41%</td><td>~12%</td><td>—</td>
+	</tr>
+	<tr>
+		<td><code>unix.Open</code>+<code>os.NewFile</code></td><td>1024</td>
+		<td>~%1</td><td>~65%</td><td>~21%</td><td>—</td>
+	</tr>
+</table>
+
+So yes, for small directories, opening the directory eats a considerable amount
+of time, compared to reading the entries.
 
 ## Don't Lay Waste to Syscalls and Heap
 

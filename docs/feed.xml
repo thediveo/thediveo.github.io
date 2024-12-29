@@ -6,10 +6,17 @@
     <atom:link href="https://thediveo.github.io/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Background information on TheDiveO's Open Source works.</description>
     <item>
+      <title>ioctl Request Values in Go</title>
+      <link>https://thediveo.github.io/#/art/ioctl</link>
+      <description>a small helper for constructing missing ioctl(2) request values.</description>
+      <pubDate>Sun, 29 Dec 2024 21:20:23 +0000</pubDate>
+      <guid>https://thediveo.github.io/#/art/ioctl</guid>
+    </item>
+    <item>
       <title>Lost VSCode Ctrl-Click?</title>
       <link>https://thediveo.github.io/#/art/vscode</link>
       <description>disabling and re-enabling extensions, seriously?</description>
-      <pubDate>Sun, 29 Dec 2024 20:30:46 +0000</pubDate>
+      <pubDate>Sun, 29 Dec 2024 20:40:20 +0000</pubDate>
       <guid>https://thediveo.github.io/#/art/vscode</guid>
     </item>
     <item>

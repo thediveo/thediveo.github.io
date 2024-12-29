@@ -10,7 +10,7 @@ data structures in ASCII and Unicode. This package also supports properties of
 nodes, separate from the tree hierarchy, as well as tagging `struct` fields with
 their roles.
 
-[![Go Reference](https://pkg.go.dev/badge/github.com/thediveo/go-asciitree.svg)](https://pkg.go.dev/github.com/thediveo/go-asciitree)
+[![PkgGoDev](https://pkg.go.dev/badge/github.com/thediveo/go-asciitree.svg)](https://pkg.go.dev/github.com/thediveo/go-asciitree)
 
 ## `enumflag`
 
@@ -22,7 +22,7 @@ There's now a source-compatible `enumflag/v2` that makes use of Go generics so
 that the Go compiler can type-check at compile time that you are passing in a
 suitable enum flag type and a matching enum value-to-string map.
 
-[![GoDoc](https://pkg.go.dev/badge/github.com/TheDiveO/enumflag.svg)](https://pkg.go.dev/github.com/thediveo/enumflag)
+[![PkgGoDev](https://pkg.go.dev/badge/github.com/TheDiveO/enumflag.svg)](https://pkg.go.dev/github.com/thediveo/enumflag)
 
 ## `klo`
 
@@ -33,4 +33,4 @@ sorted tabular.
 You might want to use this package in your CLI tools to easily offer
 `kubectl`-like output formatting to your Kubernetes-spoiled users.
 
-[![GoDoc](https://pkg.go.dev/badge/github.com/TheDiveO/klo.svg)](https://pkg.go.dev/github.com/thediveo/klo)
+[![PkgGoDev](https://pkg.go.dev/badge/github.com/TheDiveO/klo.svg)](https://pkg.go.dev/github.com/thediveo/klo)

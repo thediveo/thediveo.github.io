@@ -1,5 +1,6 @@
 <!-- markdownlint-disable-next-line first-line-h1 -->
 * Posts
+  * [ioctl Request Values in Go](/art/ioctl)
   * [Lost VSCode Ctrl-Click?](/art/vscode)
   * [Go Directory Iterator](/art/iterate-dir)
   * [sys/class/net](/art/sys-class-net)

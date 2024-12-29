@@ -7,6 +7,7 @@
 <div class="posts">
 
 
+- [ioctl Request Values in Go](/art/ioctl) – _a small helper for constructing missing ioctl(2) request values._ <span class="postdate">2024-12-29</span>
 - [Lost VSCode Ctrl-Click?](/art/vscode) – _disabling and re-enabling extensions, seriously?_ <span class="postdate">2024-12-29</span>
 - [Go Directory Iterator](/art/iterate-dir) – _a Go iterator to loop over directory entries more efficiently._ <span class="postdate">2024-12-28</span>
 - [sys/class/net](/art/sys-class-net) – _it&#39;s not adaptive in the way you might have read or think it is._ <span class="postdate">2024-10-20</span>

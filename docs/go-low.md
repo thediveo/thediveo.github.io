@@ -24,7 +24,7 @@ of a multi-threaded Go application into a different mount namespace. And it
 avoids having to re-execute the application in order to switch into a different
 mount namespace before the Go runtime spins up.
 
-[![GoDoc](https://pkg.go.dev/badge/github.com/thediveo/lxkns.svg)](https://pkg.go.dev/github.com/thediveo/lxkns)
+[![PkgGoDev](https://pkg.go.dev/badge/github.com/thediveo/lxkns.svg)](https://pkg.go.dev/github.com/thediveo/lxkns)
 
 For some lower-level functionality, `lxkns` relies on separate Go modules that
 might be of interest also outside the context of `lxkns`:
@@ -47,17 +47,7 @@ always up-to-date list of alive containers whenever they need without having to
 worry about (re)synchronization with the container engines, high poll load, et
 cetera. That's taken care of by the `whalewatcher` module.
 
-[![GoDoc](https://pkg.go.dev/badge/github.com/thediveo/whalewatcher.svg)](https://pkg.go.dev/github.com/thediveo/whalewatcher)
-
-## `sealwatcher`
-
-[sealwatcher](https://github.com/thediveo/sealwatcher) automatically tracks
-[Podman](https://podman.io) container active workloads in the background. It
-extends [whalewatcher](https://github.com/thediveo/whalewatcher) to provide a
-native podman experience – albeit I personally found that to be more
-[p.o.'d.man](/art/podman)-like than anything smooth.
-
-[![GoDoc](https://pkg.go.dev/badge/github.com/thediveo/sealwatcher.svg)](https://pkg.go.dev/github.com/thediveo/sealwatcher)
+[![PkgGoDev](https://pkg.go.dev/badge/github.com/thediveo/whalewatcher.svg)](https://pkg.go.dev/github.com/thediveo/whalewatcher)
 
 ## `procfsroot`
 
@@ -79,7 +69,19 @@ prefix always required.
 consider using the higher-level abstraction of the `Mountineer` type in the
 `lxkns` module, as it hides gory details
 
-[![GoDoc](https://pkg.go.dev/badge/github.com/thediveo/procfsroot.svg)](https://pkg.go.dev/github.com/thediveo/procfsroot)
+[![PkgGoDev](https://pkg.go.dev/badge/github.com/thediveo/procfsroot.svg)](https://pkg.go.dev/github.com/thediveo/procfsroot)
+
+## 💤`sealwatcher`
+
+💤 _retired_, see [p.o.'d.man](/art/podman) for an explanation.
+
+[sealwatcher](https://github.com/thediveo/sealwatcher) automatically tracks
+[Podman](https://podman.io) container active workloads in the background. It
+extends [whalewatcher](https://github.com/thediveo/whalewatcher) to provide a
+native podman experience – albeit I personally found that to be more
+[p.o.'d.man](/art/podman)-like than anything smooth.
+
+[![PkgGoDev](https://pkg.go.dev/badge/github.com/thediveo/sealwatcher.svg)](https://pkg.go.dev/github.com/thediveo/sealwatcher)
 
 ## 💤`gons`
 

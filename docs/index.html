@@ -153,6 +153,11 @@
         line-height: initial;
       }
 
+      .markdown-section a, .markdown-section a:hover {
+        text-underline-offset: 20%;
+        text-decoration-thickness: 0.2ex;
+      }
+
       div.docsify-pagination-container {
         margin-top: 2.5em;
         margin-bottom: 2.5em;
@@ -245,6 +250,14 @@
       }
       span.postdate::after {
         content: "]";
+      }
+
+      key {
+        border-radius: 0.4ex;
+        padding: 0.1ex 0.2em;
+        border-width: 1px;
+        border-style: solid;
+        border-color: hsl(from var(--base-color) h s l / 30%);
       }
     </style>
   </head>

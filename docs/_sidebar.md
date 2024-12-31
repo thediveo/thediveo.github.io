@@ -1,5 +1,6 @@
 <!-- markdownlint-disable-next-line first-line-h1 -->
 * Posts
+  * [Docsify DevCntr Feature](/art/devcntr-feature-docsify)
   * [ioctl Request Values in Go](/art/ioctl)
   * [Lost VSCode Ctrl-Click?](/art/vscode)
   * [Go Directory Iterator](/art/iterate-dir)
@@ -25,6 +26,7 @@
     * [Namespaces & Containers](/go-low)
     * [CLI Support](/go-cli)
     * [Testing & Profiling](go-testprof)
+  * [DevContainer Features](/devcontr-features)
   * [Python](/spam)
   * [TiddlyWiki5](/tiddlywiki)
   * [Kdenlive](/kdenlive)

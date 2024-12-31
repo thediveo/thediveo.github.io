@@ -6,10 +6,17 @@
     <atom:link href="https://thediveo.github.io/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Background information on TheDiveO's Open Source works.</description>
     <item>
+      <title>Docsify DevContainer Feature</title>
+      <link>https://thediveo.github.io/#/art/devcntr-feature-docsify</link>
+      <description>work in DevContainers on your docsified documentation.</description>
+      <pubDate>Tue, 31 Dec 2024 21:07:15 +0000</pubDate>
+      <guid>https://thediveo.github.io/#/art/devcntr-feature-docsify</guid>
+    </item>
+    <item>
       <title>ioctl Request Values in Go</title>
       <link>https://thediveo.github.io/#/art/ioctl</link>
       <description>a small helper for constructing missing ioctl(2) request values.</description>
-      <pubDate>Sun, 29 Dec 2024 21:20:23 +0000</pubDate>
+      <pubDate>Sun, 29 Dec 2024 21:21:39 +0000</pubDate>
       <guid>https://thediveo.github.io/#/art/ioctl</guid>
     </item>
     <item>

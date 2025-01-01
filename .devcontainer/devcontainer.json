@@ -18,8 +18,6 @@
     },
 
     "features": {
-        // https://github.com/devcontainers/features/tree/main/src/node
-        "ghcr.io/devcontainers/features/node:1": {},
         "ghcr.io/thediveo/devcontainer-features/docsify:0": {
             "port": "3300",
             "livereload-port": "3301",

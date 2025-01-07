@@ -1,44 +1,38 @@
 ---
 title: "Docsify DevContainer Feature"
-shorttitle: "Docsify DevCntr Feature"
+shorttitle: "A Docsify DevCntr Feature"
 description: "work in DevContainers on your docsified documentation."
 ---
 
-# Docsify DevContainer Feature
+# A Docsify DevContainer Feature
 
-I confess: I'm really late to "[Development
+I must confess: I'm _really late_ to "[Development
 Containers](https://containers.dev/)" (or "devcontainers" for short).
 
 As my first experiment I choose the repository for thediveo.github.io – the very
-pages you're reading right now. These basially need just the
-[docsify](https://docsify.js.org) on-the-fly document site generator. As I have
-added RSS XML support recently, for writing I additionaly need
-[yq](https://github.com/mikefarah/yq) and `xmllint`. Unfortunately, `yq` tends
-to be in package repositories to be rather very stale, so automatically
-installing a binary directly from the project's release page is where
-devcontainers thrill at.
+pages you're reading right now. These pages basially need just the
+[docsify](https://docsify.js.org) on-the-fly document site generator. As I use
+docsify for no-thrills documentation site of other projects, such as
+[Edgeshark](https://edgeshark.siemens.io) and
+[lxkns](https://thediveo.github.io/lxkns) reuse is a thing for me, so let's do a
+[devcontainer
+feature](https://code.visualstudio.com/blogs/2022/09/15/dev-container-features).
 
-However, `xmllint` and `yq` aside that are specific to my particular needs, I
-use `docsify` in several projects, both from the company I work for, as well as
-in my personal projects.
+If you've ever seen how Gitlab ("_lab_", not "hub") made a total mess with its
+copy-and-paste CI, you'll probably immediately see the benefit of centrally
+well-maintained units – be it for devcontainers or CI workflows.
 
-Thankfully, devcontainers allow for so-called "features" which are
-self-contained, shareable units of installation code and devcontainer
-configuration.
+## Reusing the Feature
 
-If you've ever seen that Gitlab ("_lab_", not "hub") CI copy-and-paste total
-mess, you'll probably immediately see the benefit of centrally maintained units
-– be it for devcontainers or CI workflows.
-
-To reuse this docsify feature, you simply reference it in your
+To reuse my docsify feature, you simply reference it in your
 `devcontainer.json`, such as follows:
 
 ```json
 {
     "features": {
         "ghcr.io/thediveo/devcontainers-features/docsify:0": {
-            "port": "3300",
-            "livereload-port": "3301",
+            "port": "3300",            // default, just for documentation
+            "livereload-port": "3301", // default, just for documentation
         }
     }
 }
@@ -50,3 +44,45 @@ feature will automatically reference `ghcr.io/devcontainers/features/node:1`.
 
 See also the [docsify feature
 README.md](https://github.com/thediveo/devcontainer-features/blob/master/src/docsify/README.md).
+
+## Beyond the Feature: RSS XML Generation
+
+Recently, I added RSS XML support to my docsify site and I rely on
+[yq](https://github.com/mikefarah/yq) and `xmllint` to generate the RSS XML from
+the documents and their YAML front matter (if any).
+
+Now, this doesn't look like a general feature, so I'm keeping this part of the
+devcontainer itself and not a feature.
+
+Now, `yq` from the big Linux distro package repositories tend to be very
+flea-bitten, so the only way forward here is to automatically install `yq`
+directly from the project's own release page. And that's exactly the kind of
+situation devcontainers thrive on.
+
+So, in my site's `devcontainer.json` I declare not only to use the `docsify` feature, but additionally a `Dockerfile`:
+
+```json
+{
+    "build":{
+      "dockerfile": "Dockerfile"  
+    }, 
+}
+```
+
+Now, my `Dockerfile` pulls off a trick of its sleeve in order to avoid my
+installation script ending up in the final devcontainer: it leverages the
+ability of the `RUN` command to temporarily bind-mount files and directories
+belonging to another image into the current layer just for the duration of the
+`RUN`...
+
+```dockerfile
+FROM scratch as installer
+COPY ./install.sh /tmp/install.sh
+
+FROM mcr.microsoft.com/devcontainers/base:ubuntu-24.04 as final
+RUN --mount=type=bind,from=installer,source=/tmp/install.sh,target=/tmp/install.sh \
+    /tmp/install.sh
+```
+
+As a bind-mount is not a copy operation, the script is just made visible but not
+added to the current layer.

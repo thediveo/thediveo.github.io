@@ -1,6 +1,6 @@
 ---
-title: "Docsify DevContainer Feature"
-shorttitle: "A Docsify DevCntr Feature"
+title: "A Docsify DevContainer Feature"
+shorttitle: "A Docsify Dev📦 Feature"
 description: "work in DevContainers on your docsified documentation."
 ---
 

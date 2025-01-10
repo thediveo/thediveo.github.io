@@ -1,6 +1,8 @@
 <!-- markdownlint-disable-next-line first-line-h1 -->
 * Posts
-  * [A Docsify DevCntr Feature](/art/devcntr-feature-docsify)
+  * [Publishing Ports @127.0.0.1](/art/docker-publish-loopback)
+  * [The DooD Dev📦 Feature](/art/devcntr-feature-dood)
+  * [A Docsify Dev📦 Feature](/art/devcntr-feature-docsify)
   * [ioctl Request Values in Go](/art/ioctl)
   * [Lost VSCode Ctrl-Click?](/art/vscode)
   * [Go Directory Iterator](/art/iterate-dir)

@@ -7,7 +7,9 @@
 <div class="posts">
 
 
-- [Docsify DevContainer Feature](/art/devcntr-feature-docsify) – _work in DevContainers on your docsified documentation._ <span class="postdate">2024-12-31</span>
+- [Publishing Ports (Explicitly) on Host-Local Networks](/art/docker-publish-loopback) – _when 127.0.0.1 isn&#39;t as local as you wanted it to be._ <span class="postdate">2025-01-10</span>
+- [The Docker-out-of-Docker DevContainer Feature](/art/devcntr-feature-dood) – _analyzing the Docker-out-of-Docker DevContainer feature._ <span class="postdate">2025-01-10</span>
+- [A Docsify DevContainer Feature](/art/devcntr-feature-docsify) – _work in DevContainers on your docsified documentation._ <span class="postdate">2024-12-31</span>
 - [ioctl Request Values in Go](/art/ioctl) – _a small helper for constructing missing ioctl(2) request values._ <span class="postdate">2024-12-29</span>
 - [Lost VSCode Ctrl-Click?](/art/vscode) – _disabling and re-enabling extensions, seriously?_ <span class="postdate">2024-12-29</span>
 - [Go Directory Iterator](/art/iterate-dir) – _a Go iterator to loop over directory entries more efficiently._ <span class="postdate">2024-12-28</span>

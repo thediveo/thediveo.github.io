@@ -6,10 +6,17 @@
     <atom:link href="https://thediveo.github.io/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Background information on TheDiveO's Open Source works.</description>
     <item>
+      <title>Publishing Ports (Explicitly) on Host-Local Networks</title>
+      <link>https://thediveo.github.io/#/art/docker-publish-loopback</link>
+      <description>when 127.0.0.1 isn't as local as you wanted it to be.</description>
+      <pubDate>Fri, 10 Jan 2025 19:41:45 +0000</pubDate>
+      <guid>https://thediveo.github.io/#/art/docker-publish-loopback</guid>
+    </item>
+    <item>
       <title>The Docker-out-of-Docker DevContainer Feature</title>
       <link>https://thediveo.github.io/#/art/devcntr-feature-dood</link>
       <description>analyzing the Docker-out-of-Docker DevContainer feature.</description>
-      <pubDate>Fri, 10 Jan 2025 14:34:03 +0000</pubDate>
+      <pubDate>Fri, 10 Jan 2025 19:41:29 +0000</pubDate>
       <guid>https://thediveo.github.io/#/art/devcntr-feature-dood</guid>
     </item>
     <item>

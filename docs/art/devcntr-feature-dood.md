@@ -10,15 +10,27 @@ The maintainers of the Development Container specification kindly offer two
 features to get access to Docker functionality _inside_ dev containers:
 
 - [Docker-in-Docker](https://github.com/devcontainers/features/tree/main/src/docker-in-docker)
-  feature ~ "DinD"
+  feature ~ "**DinD**"
 - [Docker-outside-of-Docker](https://github.com/devcontainers/features/tree/main/src/docker-outside-of-docker)
-  feature ~ "DooD
+  feature ~ "**DooD**"
 
 Just as a quick recap, "**Docker-in-Docker**" – which often is simply called
 "DinD" – describes a system configuration where an "inner" Docker demon is
 running _inside_ a Docker container. The inner Docker is actually _not running
 inside_ the Docker demon though, as (Docker) containers are never run "inside"
 their container demons/engines[^xmen].
+
+To illustrate this situation further, here's a graphical representation of the
+resulting networking, courtesy of
+[Edgeshark](https://github.com/siemens/edgeshark): `frosty_maxwell` is the
+devcontainer, then `virtual_insanity` is a container "inside" the devcontainer.
+Please note how from the networking perspective there isn't any "inner" or
+"outer", just flat, separated networking stacks. Yet Edgeshark, as the
+_managing_ Docker demon actually is inside another Docker container shows a
+`[frosty_maxwell]:` prefix in this situation.
+
+![Docker-in-Docker with container inside
+devcontainer](_images/devcontainer-dind.png)
 
 In contrast, "**Docker-out-of-Docker**" describes a setup where the processes
 inside a container get the host's Docker API socket (or, preferably, a Docker

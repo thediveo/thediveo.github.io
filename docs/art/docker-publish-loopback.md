@@ -8,9 +8,16 @@ description: "when 127.0.0.1 isn't as local as you wanted it to be."
 
 One (potentially nasty) surprise in Docker's container networking has been all
 the time that publishing a service port on `127.0.0.1` would not exactly do what
-you might expect it to do. At least, Docker's networking documentation has for
-some time a warning in its [Published
-ports](https://docs.docker.com/engine/network/#published-ports) section:
+you might expect it to do. Another host that can send IP packets with loopback
+IP addresses (sic!) to your Docker host's published port will have its IP
+packets forwarded, the same applies to the Docker network address ranges.
+Normally, such IP packets can only reach your Docker host from another host on
+the same link layer (nee "L2") as IP routers should normally drop these packets
+instead of forwarding them.
+
+At least, Docker's networking documentation has for some time a warning in its
+[Published ports](https://docs.docker.com/engine/network/#published-ports)
+section:
 
 > [!QUOTE]
 >

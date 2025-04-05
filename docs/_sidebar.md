@@ -1,5 +1,6 @@
 <!-- markdownlint-disable-next-line first-line-h1 -->
 * Posts
+  * [eBPF Dev📦 Features](/art/devcntr-feature-ebpf)
   * [Publishing Ports @127.0.0.1](/art/docker-publish-loopback)
   * [The DooD Dev📦 Feature](/art/devcntr-feature-dood)
   * [A Docsify Dev📦 Feature](/art/devcntr-feature-docsify)

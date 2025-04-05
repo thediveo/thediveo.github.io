@@ -7,6 +7,7 @@
 <div class="posts">
 
 
+- [eBPF DevContainer Features](/art/devcntr-feature-ebpf) – _devcontainer features to help with eBPF._ <span class="postdate">2025-04-05</span>
 - [Publishing Ports (Explicitly) on Host-Local Networks](/art/docker-publish-loopback) – _when 127.0.0.1 isn&#39;t as local as you wanted it to be._ <span class="postdate">2025-01-10</span>
 - [The Docker-out-of-Docker DevContainer Feature](/art/devcntr-feature-dood) – _analyzing the Docker-out-of-Docker DevContainer feature._ <span class="postdate">2025-01-10</span>
 - [A Docsify DevContainer Feature](/art/devcntr-feature-docsify) – _work in DevContainers on your docsified documentation._ <span class="postdate">2024-12-31</span>

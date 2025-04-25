@@ -15,10 +15,10 @@ While VSCode's "Debug Console" correctly renders Ginkgo's colorized output when
 _debugging_ package tests, the "Output" pane used when _running_ package tests
 does not interpret terminal escape sequences such as used for colorization.
 Requests to fix this seemingly odd limitation of VSCode Output panes have been
-opened over time several times: the "original" [microsoft/vscode issue
-571](https://github.com/microsoft/vscode/issues/571) was created back in
-November 2015 and four years later closed without any fix, in October 2019, by
-the `vscodebot`.
+opened over time several times: the "original" [microsoft/vscode
+issue&nbsp;#571](https://github.com/microsoft/vscode/issues/571) was created
+back in November 2015 and four years later closed without any fix, in October
+2019, by the `vscodebot`.
 
 ## `go.testFlags`
 
@@ -29,8 +29,8 @@ this flag.
 
 There's actually a probably lesser known and often overlooked feature in
 `go.testFlags` to work around such issues: `-args` as mentioned in
-[golang/vscode-go issue
-#2994](https://github.com/golang/vscode-go/issues/2994#issuecomment-1748893664). 
+[golang/vscode-go
+issue&nbsp;#2994](https://github.com/golang/vscode-go/issues/2994#issuecomment-1748893664). 
 
 > [!QUOTE]
 >

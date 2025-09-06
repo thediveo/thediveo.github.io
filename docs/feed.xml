@@ -6,10 +6,17 @@
     <atom:link href="https://thediveo.github.io/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Background information on TheDiveO's Open Source works.</description>
     <item>
+      <title>Observability Unit Testing 1/4</title>
+      <link>https://thediveo.github.io/#/art/obs-unit-testing-prom</link>
+      <description>observability data is also an API that should be tested.</description>
+      <pubDate>Sun, 30 Nov 2025 19:54:59 +0000</pubDate>
+      <guid>https://thediveo.github.io/#/art/obs-unit-testing-prom</guid>
+    </item>
+    <item>
       <title>🐋 Hub Cache DevContainer Feature</title>
       <link>https://thediveo.github.io/#/art/devcntr-feature-registry-cache</link>
       <description>a CNCF Distribution Registry as pull-through cache inside your DevContainer to play well with the Docker Hub pull rate limit.</description>
-      <pubDate>Sun, 30 Nov 2025 19:50:48 +0000</pubDate>
+      <pubDate>Sun, 30 Nov 2025 19:51:25 +0000</pubDate>
       <guid>https://thediveo.github.io/#/art/devcntr-feature-registry-cache</guid>
     </item>
     <item>

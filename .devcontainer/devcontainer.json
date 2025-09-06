@@ -32,7 +32,8 @@
                 "DavidAnson.vscode-markdownlint",
                 "stkb.rewrap",
                 "brunnerh.insert-unicode",
-                "mhutchie.git-graph"
+                "mhutchie.git-graph",
+                "streetsidesoftware.code-spell-checker"
             ]
         }
     }

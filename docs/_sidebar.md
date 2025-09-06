@@ -1,5 +1,6 @@
 <!-- markdownlint-disable-next-line first-line-h1 -->
 * Posts
+  * [Observability Unit Testing 1/4](/art/obs-unit-testing-prom)
   * [🐋 Hub Cache Dev📦 Feature](/art/devcntr-feature-registry-cache)
   * [Ginkgo: go.testFlags](/art/gomega-vscode-testflags)
   * [eBPF Dev📦 Features](/art/devcntr-feature-ebpf)

@@ -6,10 +6,17 @@
     <atom:link href="https://thediveo.github.io/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Background information on TheDiveO's Open Source works.</description>
     <item>
+      <title>🐋 Hub Cache DevContainer Feature</title>
+      <link>https://thediveo.github.io/#/art/devcntr-feature-registry-cache</link>
+      <description>a CNCF Distribution Registry as pull-through cache inside your DevContainer to play well with the Docker Hub pull rate limit.</description>
+      <pubDate>Sun, 30 Nov 2025 19:50:48 +0000</pubDate>
+      <guid>https://thediveo.github.io/#/art/devcntr-feature-registry-cache</guid>
+    </item>
+    <item>
       <title>Ginkgo Colorization and VSCode go.testFlags</title>
       <link>https://thediveo.github.io/#/art/gomega-vscode-testflags</link>
       <description>running and debugging colorized Ginkgo Go tests</description>
-      <pubDate>Fri, 25 Apr 2025 20:14:56 +0000</pubDate>
+      <pubDate>Fri, 25 Apr 2025 20:15:41 +0000</pubDate>
       <guid>https://thediveo.github.io/#/art/gomega-vscode-testflags</guid>
     </item>
     <item>

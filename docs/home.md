@@ -7,6 +7,7 @@
 <div class="posts">
 
 
+- [DevContainer Features in DevContainers](/art/devcntr-feature-dogfood) – _it&#39;s only consequential to develop DevContainer features in a DevContainer._ <span class="postdate">2025-12-01</span>
 - [🐋 Hub Cache DevContainer Feature](/art/devcntr-feature-registry-cache) – _a CNCF Distribution Registry as pull-through cache inside your DevContainer to play well with the Docker Hub pull rate limit._ <span class="postdate">2025-11-30</span>
 - [Ginkgo Colorization and VSCode go.testFlags](/art/gomega-vscode-testflags) – _running and debugging colorized Ginkgo Go tests_ <span class="postdate">2025-04-25</span>
 - [eBPF DevContainer Features](/art/devcntr-feature-ebpf) – _devcontainer features to help with eBPF._ <span class="postdate">2025-04-05</span>

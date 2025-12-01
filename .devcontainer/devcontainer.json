@@ -22,7 +22,8 @@
             "port": "3300",
             "livereload-port": "3301",
             "docs-path": "./docs"
-        }
+        },
+        "ghcr.io/thediveo/devcontainer-features/lazygit:0": {} 
     },
     
     "customizations": {

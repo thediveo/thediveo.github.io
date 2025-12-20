@@ -6,10 +6,17 @@
     <atom:link href="https://thediveo.github.io/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Background information on TheDiveO's Open Source works.</description>
     <item>
+      <title>Correct Canvas Theming for Storybook 10 with MUI 7</title>
+      <link>https://thediveo.github.io/#/art/storybook-autodocs-canvas-mui-theming</link>
+      <description>a simple and elegant solution instead of unmaintainable degenerative AI trainwreck code slob.</description>
+      <pubDate>Sat, 20 Dec 2025 21:33:51 +0000</pubDate>
+      <guid>https://thediveo.github.io/#/art/storybook-autodocs-canvas-mui-theming</guid>
+    </item>
+    <item>
       <title>DevContainer Features in DevContainers</title>
       <link>https://thediveo.github.io/#/art/devcntr-feature-dogfood</link>
       <description>it's only consequential to develop DevContainer features in a DevContainer.</description>
-      <pubDate>Mon, 01 Dec 2025 19:31:20 +0000</pubDate>
+      <pubDate>Mon, 01 Dec 2025 19:35:42 +0000</pubDate>
       <guid>https://thediveo.github.io/#/art/devcntr-feature-dogfood</guid>
     </item>
     <item>

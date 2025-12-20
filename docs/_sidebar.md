@@ -1,5 +1,6 @@
 <!-- markdownlint-disable-next-line first-line-h1 -->
 * Posts
+  * [Storybook MUI Canvas Theming](/art/storybook-autodocs-canvas-mui-theming)
   * [DevContainer Features in DevContainers](/art/devcntr-feature-dogfood)
   * [🐋 Hub Cache Dev📦 Feature](/art/devcntr-feature-registry-cache)
   * [Ginkgo: go.testFlags](/art/gomega-vscode-testflags)

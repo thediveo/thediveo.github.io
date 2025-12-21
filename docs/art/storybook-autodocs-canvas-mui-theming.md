@@ -9,7 +9,7 @@ description: "a simple and elegant solution instead of unmaintainable degenerati
 What if ... you simply want to have Storybook's automated documentation using
 the same theme as the sidebar? And then correctly working interactive theme
 switching for the rendered components, preferably defaulting to the sidebar's
-theme at start?
+theme at start? With only a single theme selector button?
 
 ## Complete f·AI·l
 
@@ -20,8 +20,10 @@ is enough that I tried and ended up with 5× the necessary code ... and that slo
 was only _sometimes working somewhat_.
 
 To add insult to the injury, Storybook's own [Integrate Material UI with
-Storybook recipe](https://storybook.js.org/recipes/@mui/material/) is partly
-slob leading users into wrong directions. 🤦‍♂️
+Storybook recipe](https://storybook.js.org/recipes/@mui/material/) is seemingly
+partly slob leading users into wrong directions. It creates confusion by adding
+a second(!) theme selector to the autodoc/story view, so hardly the epitome of
+good UX.
 
 ## Starting Point
 
@@ -32,13 +34,13 @@ My current web UI app project setup for the renovation of
 - [Vite](https://vite.dev/) 7 (7.3),
 - [MUI](https://mui.com/) 7 (7.3),
 - [Storybook](https://storybook.js.org/) 10 (10.1)
-  - @storybook/addon-docs 10 (10.1),
-  - @storybook/addon-themes 10 (10.1)
+  - @storybook/addon-docs 10 (10.1).
 
 ## `main.ts`
 
 My `main.ts` is pretty run-of-the-mill and shown here just for completeness: it
-pulls in the `@storybook/addon-themes` and `@storybook/addon-docs` add-ons.
+pulls in the `@storybook/addon-docs` add-on. However, it **doesn't use**
+~~`@storybook/addon-themes`~~.
 
 ```ts
 import type { StorybookConfig as StorybookViteConfig } from '@storybook/react-vite'
@@ -57,7 +59,6 @@ const config: StorybookViteConfig = {
 
     addons: [
         '@storybook/addon-docs',
-        '@storybook/addon-themes',
     ],
 
     docs: {
@@ -110,6 +111,8 @@ Next, we need a light and a dark MUI theme; the simplest way is to simply do...
 
 ```tsx
 // preview.tsx
+import { createTheme } from '@mui/material/styles'
+
 const lightTheme = createTheme({ palette: { mode: 'light' } })
 const darkTheme = createTheme({ palette: { mode: 'dark' } })
 ```
@@ -125,16 +128,20 @@ such as covering colors for specific components outside the scope of MUI itself.
 
 ## Preview Wrap
 
+First, we're going to avoid `withThemeFromJSXProvider` and
+`@storybook/addon-themes` completely; what's the point of having a second and
+confusing theme selector?
+
 And here comes the real "know-how" part where I could not find any documentation
-and where storybook's own AI bot -- as well as other AI systems -- were
-producing only absolute crap. Instead, simply looking[^console.log] at what gets
-passed as a so-called `context` to preview decorator functions reveals a global
+and where storybook's own AI bot -- as bad as other AI systems -- were producing
+only absolute crap.
+
+Instead, simply looking[^console.log] at what gets passed as a so-called
+`context` to preview decorator functions reveals a global
 [`backgrounds`](https://storybook.js.org/docs/essentials/backgrounds#configuration)
 "feature" -- while `backgrounds` is documented with certain fields, there's a
-`value` field that isn't documented.
-
-Playing around with the theme selector for the automatically generated
-documentation (see screenshot) thankfully changes this `value` field...
+`value` field that isn't documented. When playing around with the theme selector
+(see screenshot) the `value` field thankfully follows suit...
 
 ![autodocs theme selector](_images/storybook-theme-selector.png)
 
@@ -146,32 +153,40 @@ documentation (see screenshot) thankfully changes this `value` field...
 
 All we need to do, is to use `context.globals.backgrounds?.value` if set, or
 otherwise fall back to the detected color scheme preference from
-`themes.normal.base`.
+`themes.normal.base` (which is either `light` or `dark`).
 
 Then it's the usual wrapping hierarchy of MUI's `StyledEngineProvider` and
 `ThemeProvider` (with the correct concrete theme palette settings, et cetera).
 Let's finally throw in a `MemoryRouter` so we can also work with components that
-in our application do navigation or need to know the current route. We use
-`context.parameters` with out self-invented `routerProps` element that, if
-present, is passed to the `MemoryRouter`; otherwise, we apply sensible defaults
-to our memory router component.
+do navigation or need to know the current route. For our `MemoryRouter` we use
+`context.parameters` with a self-invented `routerProps` element on top: if
+present, it is passed to the `MemoryRouter`; otherwise, we apply sensible
+defaults to our memory router component.
 
 ```tsx
 // preview.tsx
+import type { Preview } from '@storybook/react-vite'
+import { StyledEngineProvider, ThemeProvider } from '@mui/material/styles'
+import CssBaseline from '@mui/material/CssBaseline'
+import { MemoryRouter } from "react-router-dom"
+
 const preview: Preview = {
     decorators: [
         (Story, context) => {
             const isDark = (context.globals.backgrounds?.value || themes.normal.base) === 'dark'
+            const theme = isDark ? darkTheme : lightTheme
 
             const routerProps = context.parameters.routerProps || 
                 { initialEntries: ["/"] }
 
             return (
                 <StyledEngineProvider injectFirst>
-                    <ThemeProvider theme={isDark ? darkTheme : lightTheme} >
+                    <ThemeProvider theme={theme} >
                         <CssBaseline enableColorScheme />
                         <MemoryRouter {...routerProps}>
-                            <Story />
+                            <div style={{background: theme.palette.background.paper}}>
+                                <Story />
+                            </div>
                         </MemoryRouter>
                     </ThemeProvider>
                 </StyledEngineProvider>
@@ -189,12 +204,18 @@ automatically generated story:
 
 ![autodoc canvas theme selection](_images/storybook-autodoc-theme-light.png)
 
-Job done.
+By wrapping the `Story` into a `div` with its background set to the selected MUI
+ `theme.palette.background.paper` (or alternatively
+ `theme.palette.background.default`) we ensure that a MUI background is set,
+ regardless of the background setting inherited from any storybook theme.
+
+Job done. Clear, precise. No slobby work.
 
 ## `preview.tsx`
 
 That's it, all in a single place and with the usual MUI boilerplate (and maybe a
-tiny bit more). `lxknsLightTheme` and `lxknsDarkTheme` are two 
+tiny bit more). `lxknsLightTheme` and `lxknsDarkTheme` are two MUI themes with
+custom variables (which don't matter to us here).
 
 ```tsx
 import type { Parameters, Preview } from '@storybook/react-vite'
@@ -226,16 +247,19 @@ const preview: Preview = {
     decorators: [
         (Story, context) => {
             const isDark = (context.globals.backgrounds?.value || themes.normal.base) === 'dark'
+            const theme = isDark ? darkTheme : lightTheme
 
             const routerProps = context.parameters.routerProps || 
                 { initialEntries: ["/"] }
 
             return (
                 <StyledEngineProvider injectFirst>
-                    <ThemeProvider theme={isDark ? darkTheme : lightTheme} >
+                    <ThemeProvider theme={theme} >
                         <CssBaseline enableColorScheme />
                         <MemoryRouter {...routerProps}>
-                            <Story />
+                            <div style={{background: theme.palette.background.paper}}>
+                                <Story />
+                            </div>
                         </MemoryRouter>
                     </ThemeProvider>
                 </StyledEngineProvider>

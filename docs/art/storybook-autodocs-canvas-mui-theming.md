@@ -1,7 +1,7 @@
 ---
 title: "Correct Canvas Theming for Storybook 10 with MUI 7"
 shorttitle: "MUI Storybook Canvas Theming"
-description: "a simple and elegant solution instead of unmaintainable degenerative AI trainwreck code slob."
+description: "a simple and elegant solution instead of unmaintainable degenerative AI trainwreck code slop."
 ---
 
 # Correct Canvas Theming for Storybook 10 with MUI 7
@@ -16,12 +16,12 @@ theme at start? With only a single theme selector button?
 Friends don't let friends waste precious lifetime on degenerative AI vomitting
 [Psychomagnotheric
 Slime](https://en.wikipedia.org/wiki/Ray_Stantz#Ghostbusters_II_(1989)) code, it
-is enough that I tried and ended up with 5× the necessary code ... and that slob
+is enough that I tried and ended up with 5× the necessary code ... and that slop
 was only _sometimes working somewhat_.
 
 To add insult to the injury, Storybook's own [Integrate Material UI with
 Storybook recipe](https://storybook.js.org/recipes/@mui/material/) is seemingly
-partly slob leading users into wrong directions. It creates confusion by adding
+partly slop leading users into wrong directions. It creates confusion by adding
 a second(!) theme selector to the autodoc/story view, so hardly the epitome of
 good UX.
 
@@ -199,7 +199,7 @@ export default preview
 ```
 
 We can now select which theme to use for rendering our components in our
-stories, using the "change background" menu button at the top left of an
+stories, using the "change background"[^theme-button] menu button at the top left of an
 automatically generated story:
 
 ![autodoc canvas theme selection](_images/storybook-autodoc-theme-light.png)
@@ -209,7 +209,7 @@ By wrapping the `Story` into a `div` with its background set to the selected MUI
  `theme.palette.background.default`) we ensure that a MUI background is set,
  regardless of the background setting inherited from any storybook theme.
 
-Job done. Clear, precise. No slobby work.
+Job done. Clear, precise. No slop.
 
 ## `preview.tsx`
 
@@ -274,3 +274,6 @@ export default preview
 #### Notes
 
 [^console.log]: oh, these wonders of primeval logging!
+
+[^theme-button]: using an image icon for the theme change button is yet another
+    level of UX from the makers of storybook.

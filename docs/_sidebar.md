@@ -1,5 +1,6 @@
 <!-- markdownlint-disable-next-line first-line-h1 -->
 * Posts
+  * [MUI, MDX and addon-docs](/art/storybook-mui-mdx)
   * [MUI Storybook Canvas Theming](/art/storybook-autodocs-canvas-mui-theming)
   * [DevContainer Features in DevContainers](/art/devcntr-feature-dogfood)
   * [🐋 Hub Cache Dev📦 Feature](/art/devcntr-feature-registry-cache)

@@ -21,9 +21,9 @@ was only _sometimes working somewhat_.
 
 To add insult to the injury, Storybook's own [Integrate Material UI with
 Storybook recipe](https://storybook.js.org/recipes/@mui/material/) is seemingly
-partly slop leading users into wrong directions. It creates confusion by adding
-a second(!) theme selector to the autodoc/story view, so hardly the epitome of
-good UX.
+also partly slop leading users into wrong directions. It creates confusion by
+adding a second(!) theme selector to the autodoc/story view, so hardly the
+epitome of good UX.
 
 ## Starting Point
 
@@ -39,12 +39,11 @@ My current web UI app project setup for the renovation of
 ## `main.ts`
 
 My `main.ts` is pretty run-of-the-mill and shown here just for completeness: it
-pulls in the `@storybook/addon-docs` add-on. However, it **doesn't use**
-~~`@storybook/addon-themes`~~.
+pulls in the `@storybook/addon-docs` add-on. But, it **doesn't use**
+~~`@storybook/addon-themes`~~ which only compilcates things in many cases.
 
 ```ts
 import type { StorybookConfig as StorybookViteConfig } from '@storybook/react-vite'
-import { mdxConfiguration } from '../src/mdxconfig.ts'
 
 const config: StorybookViteConfig = {
     framework: {
@@ -105,9 +104,15 @@ Ah, that's much better and one eyesore less:
 
 ![synchronized autodocs theme](_images/storybook-same-theme.png)
 
+> [!note] Here, we're dealing with Storybook's own light and dark themes (as
+> opposed to MUI themes).
+
 ## Light/Dark MUI Themes
 
-Next, we need a light and a dark MUI theme; the simplest way is to simply do...
+Next, we need a light and a dark _MUI_ theme; the simplest way is to simply
+create a light and dark theme using MUI's
+[`createTheme`](https://mui.com/material-ui/customization/theming/#createtheme-options-args-theme),
+letting it fill in automatically all the nitty-gritty details...
 
 ```tsx
 // preview.tsx
@@ -117,14 +122,16 @@ const lightTheme = createTheme({ palette: { mode: 'light' } })
 const darkTheme = createTheme({ palette: { mode: 'dark' } })
 ```
 
-...and let MUI do the heavy lifting. Here, we pass
-[`createTheme`](https://mui.com/material-ui/customization/theming/#createtheme-options-args-theme)
-just a minimalist theme object that then gets filled with the missing elements.
+Here, we pass `createTheme` just a minimalist theme object with the desired
+palette mode, that then gets filled with the missing elements.
 
 In your own MUI application you might have already done some theme customization
 and added [custom
 variables](https://mui.com/material-ui/customization/theming/#custom-variables),
 such as covering colors for specific components outside the scope of MUI itself.
+
+> [!note] These light and dark themes are solely used for rendering the MUI
+> components and are independent of Storybook's own light and dark themes.
 
 ## Preview Wrap
 

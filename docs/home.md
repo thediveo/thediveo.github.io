@@ -7,6 +7,7 @@
 <div class="posts">
 
 
+- [MUI with MDX in Storybook addon-docs](/art/storybook-mui-mdx) – _getting MDX to work in Storybook when using MDX in your MUI application, without storyslop._ <span class="postdate">2026-01-09</span>
 - [Correct Canvas Theming for Storybook 10 with MUI 7](/art/storybook-autodocs-canvas-mui-theming) – _a simple and elegant solution instead of unmaintainable degenerative AI trainwreck code slop._ <span class="postdate">2025-12-20</span>
 - [DevContainer Features in DevContainers](/art/devcntr-feature-dogfood) – _it&#39;s only consequential to develop DevContainer features in a DevContainer._ <span class="postdate">2025-12-01</span>
 - [🐋 Hub Cache DevContainer Feature](/art/devcntr-feature-registry-cache) – _a CNCF Distribution Registry as pull-through cache inside your DevContainer to play well with the Docker Hub pull rate limit._ <span class="postdate">2025-11-30</span>

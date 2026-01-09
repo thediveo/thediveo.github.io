@@ -6,6 +6,13 @@
     <atom:link href="https://thediveo.github.io/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Background information on TheDiveO's Open Source works.</description>
     <item>
+      <title>MUI with MDX in Storybook addon-docs</title>
+      <link>https://thediveo.github.io/#/art/storybook-mui-mdx</link>
+      <description>getting MDX to work in Storybook when using MDX in your MUI application, without storyslop.</description>
+      <pubDate>Fri, 09 Jan 2026 22:19:50 +0000</pubDate>
+      <guid>https://thediveo.github.io/#/art/storybook-mui-mdx</guid>
+    </item>
+    <item>
       <title>Correct Canvas Theming for Storybook 10 with MUI 7</title>
       <link>https://thediveo.github.io/#/art/storybook-autodocs-canvas-mui-theming</link>
       <description>a simple and elegant solution instead of unmaintainable degenerative AI trainwreck code slop.</description>

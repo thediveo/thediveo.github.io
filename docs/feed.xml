@@ -6,10 +6,17 @@
     <atom:link href="https://thediveo.github.io/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Background information on TheDiveO's Open Source works.</description>
     <item>
+      <title>lxkns Renovation (v0.39.1)</title>
+      <link>https://thediveo.github.io/#/art/lxkns-renovation-0.39</link>
+      <description>lxkns renovation of the Go and Web UI code bases</description>
+      <pubDate>Sun, 01 Feb 2026 20:03:08 +0000</pubDate>
+      <guid>https://thediveo.github.io/#/art/lxkns-renovation-0.39</guid>
+    </item>
+    <item>
       <title>MUI with MDX in Storybook addon-docs</title>
       <link>https://thediveo.github.io/#/art/storybook-mui-mdx</link>
       <description>getting MDX to work in Storybook when using MDX in your MUI application, without storyslop.</description>
-      <pubDate>Fri, 09 Jan 2026 22:19:50 +0000</pubDate>
+      <pubDate>Fri, 09 Jan 2026 22:40:17 +0000</pubDate>
       <guid>https://thediveo.github.io/#/art/storybook-mui-mdx</guid>
     </item>
     <item>

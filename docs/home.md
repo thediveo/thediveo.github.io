@@ -7,6 +7,7 @@
 <div class="posts">
 
 
+- [lxkns Renovation (v0.39.1)](/art/lxkns-renovation-0.39) – _lxkns renovation of the Go and Web UI code bases_ <span class="postdate">2026-02-01</span>
 - [MUI with MDX in Storybook addon-docs](/art/storybook-mui-mdx) – _getting MDX to work in Storybook when using MDX in your MUI application, without storyslop._ <span class="postdate">2026-01-09</span>
 - [Correct Canvas Theming for Storybook 10 with MUI 7](/art/storybook-autodocs-canvas-mui-theming) – _a simple and elegant solution instead of unmaintainable degenerative AI trainwreck code slop._ <span class="postdate">2025-12-20</span>
 - [DevContainer Features in DevContainers](/art/devcntr-feature-dogfood) – _it&#39;s only consequential to develop DevContainer features in a DevContainer._ <span class="postdate">2025-12-01</span>

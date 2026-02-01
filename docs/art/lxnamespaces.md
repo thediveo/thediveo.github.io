@@ -8,7 +8,7 @@ description: "where spaces have no names and containers are lies."
 This post sheds more light on the details underpinning the Linux kernel's
 namespaces. If you want to explore these namespaces, may I shamelessly recommend
 my [lxkns namespace discovery engine](https://github.com/thediveo/lxkns)
-featuring a web-based UI? 
+featuring a web-based UI?
 
 As a quick recap and DRY (OO ... _or others_), so in Michael Kerrisk's
 instructive words on

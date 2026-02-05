@@ -55,7 +55,9 @@ spread over into support modules, including giving birth to the all-new
 
 ## Web UI
 
-![Dependency (xkcd #2347)](https://imgs.xkcd.com/comics/dependency.png)
+Obligatory xkcd reference "dependency":
+
+[![Dependency (xkcd #2347)](https://imgs.xkcd.com/comics/dependency.png)](https://imgs.xkcd.com/comics/dependency.png)
 
 After a long hibernation, the web UI was upgraded to Vite 7, React 19, MUI 7,
 MUI-X 8, Storybook 10, ESLint 9 -- so it will keep us warm for another few

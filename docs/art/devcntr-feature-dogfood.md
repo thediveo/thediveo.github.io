@@ -9,7 +9,7 @@ description: "it's only consequential to develop DevContainer features in a DevC
 Yes, works also for my use cases where some features use Docker-in-Docker, so
 I've put Docker-in-Docker in my feature development DevContainer...
 
-```json
+```json5
 {
     "name": "TheDiveO's devcontainer features",
     "image": "mcr.microsoft.com/devcontainers/base:ubuntu-24.04",

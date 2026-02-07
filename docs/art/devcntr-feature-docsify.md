@@ -27,7 +27,7 @@ well-maintained units – be it for devcontainers or CI workflows.
 To reuse my docsify feature, you simply reference it in your
 `devcontainer.json`, such as follows:
 
-```json
+```json5
 {
     "features": {
         "ghcr.io/thediveo/devcontainers-features/docsify:0": {

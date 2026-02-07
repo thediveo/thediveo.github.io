@@ -48,7 +48,7 @@ As of version 1.6.0, the DooD feature's
 [`devcontainer-feature.json`](https://github.com/devcontainers/features/blob/main/src/docker-outside-of-docker/devcontainer-feature.json)
 mounts the host's Docker API socket as follows:
 
-```json
+```json5
 {
     // ...
     "mounts": [
@@ -150,7 +150,7 @@ Another way is to deploy your development container using `runArgs` to
 enable the magic `host-gateway` host name and map it to, say, the famous
 `host.docker.local` (also tested):
 
-```json
+```json5
 {
     // ...
     "runArgs": [ "--add-host=host.docker.local:host-gateway" ],
@@ -177,7 +177,7 @@ to the same custom Docker network, as shown next:
 To attach your devcontainer to the same Docker network where the services are,
 simply specify (when _not_ using composes) in your `devcontainer.json`:
 
-```json
+```json5
 {
     // ...
     "runArgs": [ "--net=ghost-in-da-edge" ],

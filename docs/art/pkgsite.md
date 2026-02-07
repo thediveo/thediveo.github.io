@@ -80,7 +80,7 @@ First, create a `.vscode/tasks.json`, or extend your existing one, adjusting the
 URL to open in the `"args"` field at the bottom to the import path of your own
 package:
 
-```json
+```json5
 {
     // See https://go.microsoft.com/fwlink/?LinkId=733558
     // for the documentation about the tasks.json format

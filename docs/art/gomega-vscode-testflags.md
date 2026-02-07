@@ -38,7 +38,7 @@ issue&nbsp;#2994](https://github.com/golang/vscode-go/issues/2994#issuecomment-1
 > flag. VS Code extension looks for this marker flag and uses it to distinguish
 > the build/test flags and the user's application flags.
 
-```json
+```json5
 // myproject.code-workspace
 {
 	"settings": {
@@ -69,7 +69,7 @@ object.
 Without further ado, here's how to set up separate package test and debug
 package tests launch configurations:
 
-```json
+```json5
 // myproject.code-workspace
 {
 	"launch": {

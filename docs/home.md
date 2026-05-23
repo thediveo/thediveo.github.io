@@ -7,7 +7,8 @@
 <div class="posts">
 
 
-- [Docker Compose OCI Artifact Apps](/art/compose-oci-artifact-app) – _bye-bye curl, welcome `oci://` to fetch Docker compose stacks._ <span class="postdate">2026-02-07</span>
+- [Go Broverbs, or: Words of Wishdom](/art/go-broverbs) – _use your brains, not broverb rule-based coding._ <span class="postdate">2026-05-23</span>
+- [Docker Compose OCI Artifact Apps](/art/compose-oci-artifact-app) – _bye-bye curl and wget, welcome `oci://` to fetch Docker compose stacks._ <span class="postdate">2026-02-07</span>
 - [lxkns Renovation (v0.39.1)](/art/lxkns-renovation-0.39) – _lxkns renovation of the Go and Web UI code bases_ <span class="postdate">2026-02-01</span>
 - [MUI with MDX in Storybook addon-docs](/art/storybook-mui-mdx) – _getting MDX to work in Storybook when using MDX in your MUI application, without storyslop._ <span class="postdate">2026-01-09</span>
 - [Correct Canvas Theming for Storybook 10 with MUI 7](/art/storybook-autodocs-canvas-mui-theming) – _a simple and elegant solution instead of unmaintainable degenerative AI trainwreck code slop._ <span class="postdate">2025-12-20</span>

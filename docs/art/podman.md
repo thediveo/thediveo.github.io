@@ -341,5 +341,5 @@ github.com/containers/podman/v3/pkg/rootless
 
 ## Final Quote
 
-_All right, but apart from a stable API, an uncomplicated client, good
-usability, and easy operation, what has Docker ever done for us?_
+> [!QUOTE] All right, but apart from a stable API, an uncomplicated client, good
+> usability, and easy operation, what has Docker ever done for us?

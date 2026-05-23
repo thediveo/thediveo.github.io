@@ -196,14 +196,8 @@ custom network name: for instance, `edgeshark.ghost-in-da-edge`.
 
 ---
 
-[^xmen]: that includes "podman", even if their marketing tries to trick people
-    into thinking that podman isn't a demon, just because "it doesn't run all
-    the time" – not that since the dawn of Unix we had
-    [inetd](https://en.wikipedia.org/wiki/Inetd) to (re)start demons/services on
-    demand that haven't yet started or spun down. Oh, "pod**man**" is terribly
-    _non_-inclusive, by the way.
+[^xmen]: that includes "podman", even if their marketing tries to trick people into thinking that podman isn't a demon, just because "it doesn't run all the time" – not that since the dawn of Unix we had [inetd](https://en.wikipedia.org/wiki/Inetd) to (re)start demons/services on demand that haven't yet started or spun down. Oh, "pod**man**" is terribly _non_-inclusive, by the way.
 
 [^dood]: especially funny to German-speaking audiences.
 
-[^overachiever]: this ensures to **not** match on anything else named "default"
-    and also returns only the **very first match**.
+[^overachiever]: this ensures to **not** match on anything else named "default" and also returns only the **very first match**.

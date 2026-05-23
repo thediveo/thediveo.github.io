@@ -57,6 +57,4 @@ As usual, this DevContainer feature has tests to ensure it works as intended.
 
 #### Notes
 
-[^cache-mirror]: judging from the recipe's URL and title even the CNCF is
-    confused as to the canonical terminology: is it a "mirror"? It it a
-    "pull-through cache"? Is the CNCF short on dashes?
+[^cache-mirror]: judging from the recipe's URL and title even the CNCF is confused as to the canonical terminology: is it a "mirror"? It it a "pull-through cache"? Is the CNCF short on dashes?

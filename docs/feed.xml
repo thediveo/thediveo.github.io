@@ -6,10 +6,17 @@
     <atom:link href="https://thediveo.github.io/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Background information on TheDiveO's Open Source works.</description>
     <item>
+      <title>Go Broverbs, or: Words of Wishdom</title>
+      <link>https://thediveo.github.io/#/art/go-broverbs</link>
+      <description>use your brains, not broverb rule-based coding.</description>
+      <pubDate>Sat, 23 May 2026 18:06:30 +0000</pubDate>
+      <guid>https://thediveo.github.io/#/art/go-broverbs</guid>
+    </item>
+    <item>
       <title>Docker Compose OCI Artifact Apps</title>
       <link>https://thediveo.github.io/#/art/compose-oci-artifact-app</link>
-      <description>bye-bye curl, welcome `oci://` to fetch Docker compose stacks.</description>
-      <pubDate>Sat, 07 Feb 2026 16:34:09 +0000</pubDate>
+      <description>bye-bye curl and wget, welcome `oci://` to fetch Docker compose stacks.</description>
+      <pubDate>Sat, 07 Feb 2026 21:08:20 +0000</pubDate>
       <guid>https://thediveo.github.io/#/art/compose-oci-artifact-app</guid>
     </item>
     <item>

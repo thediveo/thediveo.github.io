@@ -179,12 +179,6 @@ events ...` CLI command in the background).
 
 ---
 
-[^1]: in case of podman we're using the Docker native Go client; we've
-    experimented with the podman-native API in the past (see the archived
-    [sealwatcher](https://github.com/thediveo/sealwatcher) repository), but
-    decided to not further support the podman-native API due to several severe
-    issues with the podman code base, as well as the constant incompatibilities
-    between major podman versions. Compare with the Docker API that is upwards
-    compatible for a decade or so.
+[^1]: in case of podman we're using the Docker native Go client; we've experimented with the podman-native API in the past (see the archived [sealwatcher](https://github.com/thediveo/sealwatcher) repository), but decided to not further support the podman-native API due to several severe issues with the podman code base, as well as the constant incompatibilities between major podman versions. Compare with the Docker API that is upwards compatible for a decade or so.
 
 [^2]: note the absence of a trailing demon `d`, honi soit qui mal y pense.

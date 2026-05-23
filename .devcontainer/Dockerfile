@@ -8,7 +8,7 @@ FROM scratch as installer
 COPY ./install.sh /tmp/install.sh
 
 # https://github.com/devcontainers/images/tree/main/src/base-ubuntu
-FROM mcr.microsoft.com/devcontainers/base:ubuntu-24.04 as final
+FROM mcr.microsoft.com/devcontainers/base:resolute as final
 # Bind-mount the installer script just for the time it runs into this build
 # stage, so that it itself will be automatically removed without any traces
 # after it has done its work, installing missing software.

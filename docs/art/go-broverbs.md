@@ -30,13 +30,18 @@ safely accept that `interface{}`/`any` actually says a lot.
 dependency_](https://www.youtube.com/watch?v=PAAkCSZUG1c&t=568s) ... until you
 realize that you need proper unit tests, too.
 
-## Writing _testing_ Assembler
+## Abstractions are Distractions
 
-There is a strong feeling with some Go developers that (to slightly misphrase)
-"Abstractions are Distractions" – such a nice broverb! – when it comes to
-writing unit tests. They might be then pasting another eye bead emoticon into
-their LLM prompts to be on the safe side, especially after spotting evil eye'd
-TDD frameworks.
+Write testing assembler!
+
+There is a strong feeling with several (including core team) Go developers that
+(to paraphrase them) "_Abstractions are Distractions_" when it comes to writing
+unit tests. I can imagine themthen pasting another 🧿 eye bead unicode character
+into their LLM prompts to be on the safe side, especially after exposure to
+these pure evil TDD frameworks, like [Gomega](https://github.com/onsi/gomega)
+plus [Ginkgo](https://github.com/onsi/ginkgo),
+[gotest.tools](https://github.com/gotestyourself/gotest.tools), as well as
+several more.
 
 If _you_ only need to write tests for flat data structures, the better for
 _you_. But don't assume your horizon is the universe.

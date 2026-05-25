@@ -269,7 +269,7 @@
             border-top: 1px dotted var(--border-color);
         }
 
-        h4#footnotes ~ p {
+        p:has(> :first-child.footnote-reference-symbol) {
             font-size: 90%;
             font-style: italic;
         }

@@ -521,10 +521,13 @@ directories.
 
 [^iter]: [iter](https://pkg.go.dev/iter) package documentation.
 
-[^reou]: Rémy Oudompheng in [answer to "io.ioutil.ReadDir sort by default"](https://groups.google.com/g/golang-nuts/c/Q7hYQ9GdX9Q/m/l9WQZhPp5yEJ).
+[^reou]: Rémy Oudompheng in [answer to "io.ioutil.ReadDir sort by
+    default"](https://groups.google.com/g/golang-nuts/c/Q7hYQ9GdX9Q/m/l9WQZhPp5yEJ).
 
-[^testing]: [testing.(*B).Run](https://pkg.go.dev/testing#B.Run) package documentation.
+[^testing]: [testing.(*B).Run](https://pkg.go.dev/testing#B.Run) package
+    documentation.
 
 [^linkname]: ...and this Gopher hole is being plugged anyway in due time.
 
-[^goblogstrings]: [Strings, bytes, runes and characters in Go](https://go.dev/blog/strings).
+[^goblogstrings]: [Strings, bytes, runes and characters in
+    Go](https://go.dev/blog/strings).

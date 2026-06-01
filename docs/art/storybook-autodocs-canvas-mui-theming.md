@@ -282,4 +282,5 @@ export default preview
 
 [^console.log]: oh, these wonders of primeval logging!
 
-[^theme-button]: using an image icon for the theme change button is yet another level of UX from the makers of storybook.
+[^theme-button]: using an image icon for the theme change button is yet another
+    level of UX from the makers of storybook.

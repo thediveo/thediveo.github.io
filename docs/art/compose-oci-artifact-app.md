@@ -200,12 +200,30 @@ impossible to get the sha256 at all.
 
 #### Notes
 
-[^compose-release]: according to the [release information for @docker/compose v2.34.0](https://github.com/docker/compose/releases/tag/v2.34.0).
+[^compose-release]: according to the [release information for @docker/compose
+    v2.34.0](https://github.com/docker/compose/releases/tag/v2.34.0).
 
-[^lts]: Debian Docker packages be like: "I'm not overaged! I'm long-term stable!!!"
+[^lts]: Debian Docker packages be like: "I'm not overaged! I'm long-term
+    stable!!!"
 
-[^dcy]: I'm sticking to `docker-compose.yaml` here for maximum clarity, as `compose.yaml` could also be Amadeus' long lost opus (not: octopus) on maritime life.
+[^dcy]: I'm sticking to `docker-compose.yaml` here for maximum clarity, as
+    `compose.yaml` could also be Amadeus' long lost opus (not: octopus) on
+    maritime life.
 
-[^probLLMs]: oh, it was a joy to see the totally useless crap vomitted by various ProbLLMs when asked about `docker compose publish`. As expected, this LLM vomit was neither grounded in the official documentation nor source code. Instead, it was very visibly interpolated based on statistics, not facts. When asked about the infamous `--app` flag the result was just that this is specify the app. Then asking further about what an "app" actually is, the hallucinations were much extremer than an infamous Roman Orgy. The only less hopeless LLM was Docker's, which admitted defeat saying that the documentation doesn't contain information about what an app in this context is – but only five prompts later after I had grilled it by pointing out that the answers and references given where fully out of context and incorrect, not answering my questions. **However you're prompting it, it is that stupid.**
+[^probLLMs]: oh, it was a joy to see the totally useless crap vomitted by
+    various ProbLLMs when asked about `docker compose publish`. As expected,
+    this LLM vomit was neither grounded in the official documentation nor source
+    code. Instead, it was very visibly interpolated based on statistics, not
+    facts. When asked about the infamous `--app` flag the result was just that
+    this is specify the app. Then asking further about what an "app" actually
+    is, the hallucinations were much extremer than an infamous Roman Orgy. The
+    only less hopeless LLM was Docker's, which admitted defeat saying that the
+    documentation doesn't contain information about what an app in this context
+    is – but only five prompts later after I had grilled it by pointing out that
+    the answers and references given where fully out of context and incorrect,
+    not answering my questions. **However you're prompting it, it is that
+    stupid.**
 
-[^nsenter]: deploy devcontainer with `"capAdd":["ALL"]`, `"runArgs":["--pid=host"]` and `"securityOpt":["apparmor=unconfined"]`, then a `sudo nsenter -t 1 -m docker compose ...` runs the VM's docker CLI.
+[^nsenter]: deploy devcontainer with `"capAdd":["ALL"]`,
+    `"runArgs":["--pid=host"]` and `"securityOpt":["apparmor=unconfined"]`, then
+    a `sudo nsenter -t 1 -m docker compose ...` runs the VM's docker CLI.

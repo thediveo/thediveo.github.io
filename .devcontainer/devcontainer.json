@@ -1,12 +1,12 @@
 {
     "name": "thediveo.github.io",
     "portsAttributes": {
-        "3300": {
+        "13300": {
             "label": "thediveo site",
             "onAutoForward": "notify",
             "protocol": "http"
         },
-        "3301": {
+        "13301": {
             "label": "site live-reload push channel",
             "onAutoForward": "silent",
             "protocol": "http"
@@ -19,8 +19,8 @@
 
     "features": {
         "ghcr.io/thediveo/devcontainer-features/docsify:0": {
-            "port": "3300",
-            "livereload-port": "3301",
+            "port": "13300",
+            "livereload-port": "13301",
             "docs-path": "./docs"
         },
         "ghcr.io/thediveo/devcontainer-features/lazygit:0": {} 

@@ -36,10 +36,11 @@ Write testing assembler!
 
 There is a strong feeling with several (including core team) Go developers that
 (to paraphrase them) "_Abstractions are Distractions_" when it comes to writing
-unit tests. I can imagine themthen pasting another 🧿 eye bead unicode character
-into their LLM prompts to be on the safe side, especially after exposure to
-these pure evil TDD frameworks, like [Gomega](https://github.com/onsi/gomega)
-plus [Ginkgo](https://github.com/onsi/ginkgo),
+unit tests. I can imagine them then pasting another 🧿 eye bead unicode
+character into their LLM prompts to be on the safe side, especially after
+exposure to these pure evil TDD frameworks, like
+[Gomega](https://github.com/onsi/gomega) plus
+[Ginkgo](https://github.com/onsi/ginkgo),
 [gotest.tools](https://github.com/gotestyourself/gotest.tools), as well as
 several more.
 
@@ -80,4 +81,7 @@ Expect(sprockets).To(
 
 #### Footnotes
 
-[^Realsatire]: based on statements by some of the surviving Python members where they repeatedly, pardon, parroted dispelled statements on Brexit and the European Union they sadly never understood the depth of their own movie and have become the very type of people they mocked.
+[^Realsatire]: based on statements by some of the surviving Python members where
+    they repeatedly, pardon, parroted dispelled statements on Brexit and the
+    European Union they sadly never understood the depth of their own movie and
+    have become the very type of people they mocked.

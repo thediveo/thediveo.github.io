@@ -218,14 +218,27 @@ For inodes, there are `iget` and `iput` operations accordingly.
 
 #### Notes
 
-[^unnamed-minors]: ilkkachu's question ["How are minor device numbers assigned for unnamed/non-device mounts (major number 0)?"](https://unix.stackexchange.com/questions/597020/how-are-minor-device-numbers-assigned-for-unnamed-non-device-mounts-major-numbe) on Unix&Linux StackExchange.
+[^unnamed-minors]: ilkkachu's question ["How are minor device numbers assigned
+    for unnamed/non-device mounts (major number
+    0)?"](https://unix.stackexchange.com/questions/597020/how-are-minor-device-numbers-assigned-for-unnamed-non-device-mounts-major-numbe)
+    on Unix&Linux StackExchange.
 
-[^fsstat]: see also the [`fsstat64(2)`](https://man7.org/linux/man-pages/man2/statfs64.2.html) syscall.
+[^fsstat]: see also the
+    [`fsstat64(2)`](https://man7.org/linux/man-pages/man2/statfs64.2.html)
+    syscall.
 
-[^nsfs]: Gert van der Berg's question ["What is the NSFS filesystem?"](https://unix.stackexchange.com/questions/465669/what-is-the-nsfs-filesystem) on Unix&Linux StackExchange.
+[^nsfs]: Gert van der Berg's question ["What is the NSFS
+    filesystem?"](https://unix.stackexchange.com/questions/465669/what-is-the-nsfs-filesystem)
+    on Unix&Linux StackExchange.
 
-[^taptun]: TheDiveO's question ["How to get the Linux network namespace for a tap/tun device referenced in /proc/[PID]/fdinfo/[FD]?"](https://unix.stackexchange.com/questions/504861/how-to-get-the-linux-network-namespace-for-a-tap-tun-device-referenced-in-proc) on Unix&Linux StackExchange.
+[^taptun]: TheDiveO's question ["How to get the Linux network namespace for a
+    tap/tun device referenced in
+    /proc/[PID]/fdinfo/[FD]?"](https://unix.stackexchange.com/questions/504861/how-to-get-the-linux-network-namespace-for-a-tap-tun-device-referenced-in-proc)
+    on Unix&Linux StackExchange.
 
-[^put]: Eric Renouf's question ["Linux Kernel - What does it mean to "put" an inode?"](https://stackoverflow.com/questions/34069380/linux-kernel-what-does-it-mean-to-put-an-inode) on StackOverflow.
+[^put]: Eric Renouf's question ["Linux Kernel - What does it mean to "put" an
+    inode?"](https://stackoverflow.com/questions/34069380/linux-kernel-what-does-it-mean-to-put-an-inode)
+    on StackOverflow.
 
-[^setns]: kernel implementation of the [setns syscall](https://elixir.bootlin.com/linux/v6.3/source/kernel/nsproxy.c#L546)
+[^setns]: kernel implementation of the [setns
+    syscall](https://elixir.bootlin.com/linux/v6.3/source/kernel/nsproxy.c#L546)

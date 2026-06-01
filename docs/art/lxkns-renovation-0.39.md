@@ -105,4 +105,8 @@ yes, the `lxkns` storybook has correctly working dark/light theming support.
 
 #### Notes
 
-[^cleanix]: please note that a lot of codespaces-mimicking offerings unfortunately either already fail at basic things like correct dependency resolution or have only half-baked support for unprivileged devcontainers. But hey, if it's another AI-powered AI startup it's great to sneezy into your naked hands and clean them on your clothes.
+[^cleanix]: please note that a lot of codespaces-mimicking offerings
+    unfortunately either already fail at basic things like correct dependency
+    resolution or have only half-baked support for unprivileged devcontainers.
+    But hey, if it's another AI-powered AI startup it's great to sneezy into
+    your naked hands and clean them on your clothes.

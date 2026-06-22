@@ -1,5 +1,6 @@
 <!-- markdownlint-disable-next-line first-line-h1 -->
 * Posts
+  * [ImageBuild API &amp; BuildKit](/art/buildkit)
   * [Go Broverbs](/art/go-broverbs)
   * [🐙 OCI Artifact Apps](/art/compose-oci-artifact-app)
   * [lxkns Renovation (v0.39.1)](/art/lxkns-renovation-0.39)

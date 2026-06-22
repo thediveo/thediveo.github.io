@@ -7,6 +7,7 @@
 <div class="posts">
 
 
+- [Using Docker API&#39;s `ImageBuild` With BuildKit](/art/buildkit) – _there&#39;s a BuildKit inside my Whale!_ <span class="postdate">2026-06-22</span>
 - [Go Broverbs, or: Words of Wishdom](/art/go-broverbs) – _use your brains, not broverb rule-based coding._ <span class="postdate">2026-05-23</span>
 - [Docker Compose OCI Artifact Apps](/art/compose-oci-artifact-app) – _bye-bye curl and wget, welcome `oci://` to fetch Docker compose stacks._ <span class="postdate">2026-02-07</span>
 - [lxkns Renovation (v0.39.1)](/art/lxkns-renovation-0.39) – _lxkns renovation of the Go and Web UI code bases_ <span class="postdate">2026-02-01</span>

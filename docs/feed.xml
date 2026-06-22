@@ -6,10 +6,17 @@
     <atom:link href="https://thediveo.github.io/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Background information on TheDiveO's Open Source works.</description>
     <item>
+      <title>Using Docker API's `ImageBuild` With BuildKit</title>
+      <link>https://thediveo.github.io/#/art/buildkit</link>
+      <description>there's a BuildKit inside my Whale!</description>
+      <pubDate>Mon, 22 Jun 2026 17:46:06 +0000</pubDate>
+      <guid>https://thediveo.github.io/#/art/buildkit</guid>
+    </item>
+    <item>
       <title>Go Broverbs, or: Words of Wishdom</title>
       <link>https://thediveo.github.io/#/art/go-broverbs</link>
       <description>use your brains, not broverb rule-based coding.</description>
-      <pubDate>Sat, 23 May 2026 18:06:30 +0000</pubDate>
+      <pubDate>Sat, 23 May 2026 21:04:30 +0000</pubDate>
       <guid>https://thediveo.github.io/#/art/go-broverbs</guid>
     </item>
     <item>

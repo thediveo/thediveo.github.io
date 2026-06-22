@@ -15,9 +15,9 @@ Docker_"](https://docs.docker.com/build/buildkit/) (and
 [Moby](https://github.com/moby/moby/)). In addition, the Docker/Moby daemons
 still support what is called the "legacy builder".
 
-When using the Moby/Docker Go client SDK API, it provides
+When using the Moby/Docker Go client SDK API it has this
 [`Client.ImageBuild`](https://pkg.go.dev/github.com/moby/moby/client#Client.ImageBuild)
-that takes a ton of options in form of
+method, and that takes a ton of options in form of
 [`ImageBuildOptions`](https://pkg.go.dev/github.com/moby/moby/client#ImageBuildOptions).
 But we're interested only in its `Version` field as it is related to which
 builder to choose:
@@ -80,9 +80,9 @@ importantly, it states:
 > allows the client to expose gPRC services on that connection.[^hijack]
 
 Now, I've had seen that BuildKit services are accessed via gRPC, so this was
-starting to get interesting. While searching for `"/session"` turned up
-daemon-side route setup, nothing nada zilch for the client side. However,
-looking for "hijack" turned up
+starting to get interesting. When searching for `"/session"`, this turned up
+_daemon-side_ route setup, but nothing nada zilch for the _client_ side.
+However, looking instead for "hijack"[^PI] turned up
 [`Client.DialHijack`](https://pkg.go.dev/github.com/moby/moby/client#Client.DialHijack).
 So much for probLLMs parrotting[^sic] "there's no official way to do it".
 **FFS**.
@@ -121,19 +121,23 @@ BuildKit session with the Moby/Docker Go client SDK API – the simple feat that
 the clankers could not tell me even after hours (and after-hours); not even in
 their constant degenerated hallucinations.
 
+And next, a HUUUUUGE rabbit hole opened and its event horizon started to grow in
+an alarming way...
+
 ## Session Transgression
 
-There's only a problem: that gives us a BuildKit client with all its API glory:
-but **no** way to still use the Docker API's `Client.ImageBuild` method. While
-BuildKit clients give access to all of BuildKit's wonders its going down a huge
-and very deep rabbit hole to just build `Dockerfile`s, with lots of plumbing to
-write new. Oh, the probLLMs hallucinated tons of nice code that was beyond any
-redemption, incorrect number and types of parameters were on the lesser side of
-failure.
+We have a BuildKit client with all its API glory, but **no** way to still use
+the Docker API's `Client.ImageBuild` method. Surely, BuildKit clients give
+access to all of BuildKit's glorious wonders, in order to "just" build
+`Dockerfile`s there is lots of plumbing to be done.
+
+Oh, the probLLMs hallucinated tons of nice plumbing code that expectedly was
+beyond any redemption; many repeated hallucinations of incorrect number and
+types of parameters were on the lesser side of failure.
 
 Now, the infamous
 [`ImageBuildOptions`](https://pkg.go.dev/github.com/moby/moby/client#ImageBuildOptions)
-have yet another semi-mysterious field...
+have yet another intriguing field...
 
 ```go
 type ImageBuildOptions struct {
@@ -146,13 +150,15 @@ type ImageBuildOptions struct {
 
 Looking around the BuildKit sources we find
 [`Session.ID`](https://pkg.go.dev/github.com/moby/buildkit/session#Session.ID) –
-hopefully this is the same as the above `BuildID`? As it turns out, luckily it
-is!
+while the terminology doesn't match, hopefully this is the same as the above
+`BuildID`?
+
+Spoiler: as it turns out luckily it is!
 
 Dang! But we **don't** have a BuildKit session, only a BuildKit _client_.
-Unfortunately, it's completely useless to us. Hmm, how to make an individually
-created BuildKit _session_ make use our hijacked Moby/Docker daemon connection?
-The trick to know here is:
+Unfortunately, this client is completely useless to us. Hmm, how to make an
+individually created BuildKit _session_ make use our hijacked Moby/Docker daemon
+connection? The trick to know here is:
 
 1. create the BuildKit _session_ using `bksession.NewSession(sessionCtx, "")`.
 
@@ -182,4 +188,7 @@ for using `BuidImage` with buildkit instructive; it's part of my
 #### Notes
 
 [^hijack]: <https://docs.docker.com/reference/api/engine/version/v1.54/#tag/Session>
+
+[^PI]: adorable "Political Incorrectness".
+
 [^sic]: the embodiment of "_parrot_" and "_rotting_".

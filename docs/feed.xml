@@ -6,10 +6,17 @@
     <atom:link href="https://thediveo.github.io/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Background information on TheDiveO's Open Source works.</description>
     <item>
+      <title>Dealing With `ImageBuild`'s BuildKit Output</title>
+      <link>https://thediveo.github.io/#/art/buildkit-output</link>
+      <description>how to correctly deal with the multiple layers of data streams when using `ImageBuild` with BuildKit.</description>
+      <pubDate>Wed, 24 Jun 2026 16:28:23 +0000</pubDate>
+      <guid>https://thediveo.github.io/#/art/buildkit-output</guid>
+    </item>
+    <item>
       <title>Using Docker API's `ImageBuild` With BuildKit</title>
       <link>https://thediveo.github.io/#/art/buildkit</link>
       <description>there's a BuildKit inside my Whale!</description>
-      <pubDate>Mon, 22 Jun 2026 17:46:06 +0000</pubDate>
+      <pubDate>Mon, 22 Jun 2026 19:33:07 +0000</pubDate>
       <guid>https://thediveo.github.io/#/art/buildkit</guid>
     </item>
     <item>

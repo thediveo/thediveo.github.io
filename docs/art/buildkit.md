@@ -53,10 +53,10 @@ ARG HELLO
 RUN echo "..${HELLO}.."
 ```
 
-... the API call bombed with "alpine: failed to resolve source metadata for
-docker.io/library/alpine:latest: no active sessions" or similar. I quickly
-noticed that pre-pulling the images made the error go away, but this was just a
-sloppy band-aid for a deeper problem.
+...the API call bombed with "alpine: failed to resolve source metadata for
+docker.io/library/alpine:latest: no active sessions" or similar (first golang,
+then alpine). I quickly noticed that pre-pulling the images made the error go
+away, but this was just a sloppy band-aid for a deeper problem.
 
 Problems ... apropos probLLMs: this turned in the usual parrot shitfest with
 Kotpilot, Klaudia and ShitGPiT. Calling their verbal dysentery "mediocre" would
@@ -184,6 +184,9 @@ Interested readers will hopefully find [my
 implementation](https://github.com/thediveo/morbyd/blob/c0351c6931bd3eec9fc66e1a97133c0f5149981e/image_build.go#L66-L248)
 for using `BuidImage` with buildkit instructive; it's part of my
 [morbyd](https://github.com/thediveo/morbyd) Go package.
+
+Please continue with our part II: [Dealing With `ImageBuild`'s BuildKit
+Output](/art/buildkit-output.md).
 
 #### Notes
 

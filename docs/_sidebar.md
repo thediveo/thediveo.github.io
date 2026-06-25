@@ -1,5 +1,6 @@
 <!-- markdownlint-disable-next-line first-line-h1 -->
 * Posts
+  * [ImageBuild&#39;s BuildKit Output](/art/buildkit-output)
   * [ImageBuild API &amp; BuildKit](/art/buildkit)
   * [Go Broverbs](/art/go-broverbs)
   * [🐙 OCI Artifact Apps](/art/compose-oci-artifact-app)

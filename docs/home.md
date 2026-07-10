@@ -7,7 +7,7 @@
 <div class="posts">
 
 
-- [Dealing With `ImageBuild`&#39;s BuildKit Output](/art/buildkit-output) – _how to correctly deal with the multiple layers of data streams when using `ImageBuild` with BuildKit._ <span class="postdate">2026-06-24</span>
+- [Handling `ImageBuild`&#39;s BuildKit Output](/art/handling-buildkit-output) – _how to correctly handle the multiple layers of data streams when using `ImageBuild` with BuildKit._ <span class="postdate">2026-07-10</span>
 - [Using Docker API&#39;s `ImageBuild` With BuildKit](/art/buildkit) – _there&#39;s a BuildKit inside my Whale!_ <span class="postdate">2026-06-22</span>
 - [Go Broverbs, or: Words of Wishdom](/art/go-broverbs) – _use your brains, not broverb rule-based coding._ <span class="postdate">2026-05-23</span>
 - [Docker Compose OCI Artifact Apps](/art/compose-oci-artifact-app) – _bye-bye curl and wget, welcome `oci://` to fetch Docker compose stacks._ <span class="postdate">2026-02-07</span>

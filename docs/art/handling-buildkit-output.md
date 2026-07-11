@@ -142,11 +142,12 @@ By now you might be very well "somewhat" lost, so let's recap: the following
    (diagnosis) output and collecting warnings.
 
 For the no-error case, this should be fairly straightforward. But the tricky
-part is correct error handling while neither getting stuck nor leaving go
-routines leaking around. This is in part, because BuildKit throws a very huge
- and very yellow spanner at us: the `Run` method of BuildKit sessions has fallen
-victim to the dreaded mixed error reporting anti-pattern. Now, where did we saw
-this before? Yep, the defective `client.Events` API of p.o.'d.man.
+part is correct error handling: the parole is to neither getting stuck nor
+leaving go routines leaking around. This is in part because BuildKit throws a
+very huge and very yellow spanner at us: the `Run` method of BuildKit sessions
+has fallen victim to the dreaded "conflated error reporting" anti-pattern. Now,
+where did we saw this before? Yep, the defective `client.Events` API of
+p.o.'d.man.
 
 When `client.Events` or `buildkitsession.Run` return with an error, we have no
 idea if the function failed before doing its work, or whether it did some of its
@@ -165,3 +166,162 @@ measures it races with the first domino go routine in returning the error code,
 completely mudding the waters.
 
 But there's also the situation where the first domino cannot trip another domino
+
+## Error Group Racing
+
+[`errgroup.Group`](https://pkg.go.dev/golang.org/x/sync/errgroup#Group) is a
+collection of sub tasks (that is, go routines) that work on the same overall
+task. All sub tasks get passed the same context and this context gets cancelled
+when a sub task returns with an error. Otherwise, the group waits for all sub
+tasks to finish, either in good or vain, returning the first error received from
+a sub task. Creating one is fairly boilerplate:
+
+```go
+	wg, ctx := errgroup.WithContext(ctx)
+	sessionCtx, sessionDone := context.WithCancel(ctx)
+	defer sessionDone()
+```
+
+This is gonna straightforward and easy, right? Unfortunately, in our case
+processing the stream of BuildKit solver status messages will terminate only
+after the message channel has been closed and drained – totally ignoring any context.
+
+Closing the channel is something we have to do manually, and only once, and only
+when we're actually using BuildKit:
+
+```go
+	var statech chan *bkclient.SolveStatus // only for BuildKit
+	closeStateCh := sync.OnceFunc(func() {
+		if statech == nil {
+			return
+		}
+		close(statech)
+	})
+	defer closeStateCh()
+```
+
+When using BuildKit, we need the first sub task to run the BuildKit session. The
+important point here is that the session can either fail on its own or because
+its context was cancelled. The fine point here is
+
+```go
+	if bios.Version == mobybuild.BuilderBuildKit {
+		buildkitSession, err := bksession.NewSession(sessionCtx, "")
+		if err != nil {
+			return "", fmt.Errorf("buildkit session creation failed, reason: %w", err)
+		}
+		defer func() { _ = buildkitSession.Close() }()
+
+		wg.Go(func() error {
+			err := buildkitSession.Run(sessionCtx, func(ctx context.Context, proto string, meta map[string][]string) (net.Conn, error) {
+				return s.Client().(client.HijackDialer).DialHijack(ctx, "/session", proto, meta)
+			})
+			if sessionCtx.Err() != nil && ctx.Err() == nil {
+				return nil
+			}
+			return err
+		})
+		bios.SessionID = buildkitSession.ID()
+```
+
+```go
+		// of course, we want to leverage buildkit's client display and progress
+		// UI, instead of being a dilettante. (Or is this instead spelled
+		// "dilloitte" correctly?)
+		//
+		// Anyway, we create a display and run its processing loop in a
+		// background go routine, feeding it status messages below as we receive
+		// them via auxillary messages through the HTTP response body.
+		//
+		// This processing loop will cleanly terminate when the feeder closes
+		// the status change channel. Cancelling the context will instead result
+		// in an error ... which will be ignored by the waitgroup in case
+		// another of its go routines has failed earlier.
+		bkdisplay, err := progressui.NewDisplay(bios.Out, progressui.AutoMode)
+		if err != nil {
+			return "", fmt.Errorf("buildkit progress UI display creation failed, reason: %w", err)
+		}
+		statech = make(chan *bkclient.SolveStatus, 32)
+
+		wg.Go(func() error {
+			// UpdateFrom returns when either the state change channel has been
+			// closed and drained, or when our context was done/cancelled ...
+			// which happens when either one of the other go routines has failed
+			// returning an error, or the context passed to our BuildImage
+			// method has been done/cancelled.
+			warnings, err := bkdisplay.UpdateFrom(ctx, statech)
+			if err != nil {
+				return err
+			}
+			// If this was a clean return from UpdateFrom, then render the
+			// collected warnings, if any...
+			for _, warning := range warnings {
+				_, _ = bios.Out.Write([]byte(prettyPrintVertexWarning(warning)))
+			}
+			// ...and cancel our error waitgroup-derived sub context; now, as we
+			// can only be done after the state change channel has been closed
+			// there's only the above running buildkit session to terminate.
+			// However, please note that we're still racing with the finishing
+			// BuildImage/DisplayStream go routine returning any potential error
+			// result. However, as we are on the path to success we're returning
+			// a nil error and thus won't ever override the error return value
+			// from Build/ImageDisplayStream. That leaves the buildkit session
+			// go routine, so please see above.
+			sessionDone()
+			return nil
+		})
+	}
+
+	var idval xatomic.Value[string] // never tickle the race detector
+	wg.Go(func() error {
+		// Now initiate the image build, feeding it our tar(r)ed build context
+		// contents.
+		resp, err := s.moby.ImageBuild(ctx, bios.Context, bios.ImageBuildOptions)
+		if err != nil {
+			return fmt.Errorf("image build failed, reason: %w", err)
+		}
+		defer func() { _ = resp.Body.Close() }()
+		err = jsonmessage.DisplayStream(resp.Body, bios.Out,
+			jsonmessage.WithAuxCallback(func(auxmsg jsonstream.Message) {
+				// buildkit messages are rather complex in that they are
+				// protobuf-encoded and transmitted as aux messages with their
+				// dedicated buildkit aux message ID. See also:
+				// https://github.com/moby/moby/discussions/43788#discussioncomment-13291612
+				// Digging deeper into the buildkit code base brings up the
+				// progressui/client display stuff that feeds on status response
+				// messages.
+				if auxmsg.ID == "moby.buildkit.trace" {
+					if auxmsg.Aux == nil {
+						return
+					}
+					var bkpbmsg []byte
+					if err := json.Unmarshal(*auxmsg.Aux, &bkpbmsg); err != nil {
+						return
+					}
+					var status bkcontrol.StatusResponse
+					if err := proto.Unmarshal(bkpbmsg, &status); err != nil {
+						return
+					}
+					statech <- bkclient.NewSolveStatus(&status)
+					return
+				}
+				// Please note that the image ID is reported using an aux message
+				// with its own embedded JSON message and not directly via an "ID"
+				// JSON message.
+				aux := struct {
+					ID string `json:"ID"`
+				}{}
+				if err := json.Unmarshal(*auxmsg.Aux, &aux); err != nil || aux.ID == "" {
+					return
+				}
+				// Pick up the image ID when it floats by ... and is non-zero.
+				idval.Store(aux.ID)
+			}))
+		closeStateCh()
+		return err
+	})
+
+	err = wg.Wait()
+	return idval.Load(), err
+
+```

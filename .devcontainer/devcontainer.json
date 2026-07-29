@@ -18,7 +18,8 @@
     },
 
     "features": {
-        "ghcr.io/thediveo/devcontainer-features/docsify:0": {
+        "ghcr.io/devcontainers/features/node:2": {},
+        "ghcr.io/thediveo/devcontainer-features/docsify:1": {
             "port": "13300",
             "livereload-port": "13301",
             "docs-path": "./docs"

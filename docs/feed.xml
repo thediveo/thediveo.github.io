@@ -6,10 +6,17 @@
     <atom:link href="https://thediveo.github.io/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Background information on TheDiveO's Open Source works.</description>
     <item>
+      <title>Every Container Engine</title>
+      <link>https://thediveo.github.io/#/art/lxkns-all-engines</link>
+      <description>lxkns and turtlefinder now include workload-less container engines in their discoveries.</description>
+      <pubDate>Thu, 13 Aug 2026 19:06:37 +0000</pubDate>
+      <guid>https://thediveo.github.io/#/art/lxkns-all-engines</guid>
+    </item>
+    <item>
       <title>Docker MACVLAN Networks Without a Parent</title>
       <link>https://thediveo.github.io/#/art/parentless-macvlan</link>
       <description>get a dummy (interface) instead</description>
-      <pubDate>Wed, 29 Jul 2026 18:23:31 +0000</pubDate>
+      <pubDate>Wed, 29 Jul 2026 19:56:19 +0000</pubDate>
       <guid>https://thediveo.github.io/#/art/parentless-macvlan</guid>
     </item>
     <item>
